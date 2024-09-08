@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau de Bord</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./styles/arg.css">
+    
+</head>
+<body class="bg-gray-900 text-white">
+
+<header class="p-6 bg-gray-800">
+    <div class="profile-info flex items-center">
+        <div class="relative">
+            <img class="rounded-full" src="https://opgg-static.akamaized.net/meta/images/lol/latest/champion/Draven.png?image=e_upscale,c_crop,h_103,w_103,x_9,y_9/q_auto:good,f_webp,w_100,h_100&v=1724034092925" alt="Profile Image">
+            <span class="absolute bottom-0 right-0 bg-blue-500 text-white text-xs font-bold rounded-full px-2">352</span>
+        </div>
+        <div class="ml-6">
+            <h1 class="text-white font-bold text-xl">Patrick Alexandre <span class="text-gray-400">#INTJ</span></h1>
+            <div class="text-gray-400 text-sm mt-1 flex items-center">
+                <i class="fas fa-globe-europe mr-2"></i>
+                <span>EUW</span>
+                <span class="mx-2">|</span>
+                <span class="text-blue-400">Rang Ladder <span class="text-blue-500 font-bold">16</span> (0.0038% meilleurs joueurs)</span>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="sidebar p-6 bg-gray-800 text-white w-64">
+    <h2 class="font-bold text-lg mb-4">Santé</h2>
+    <a href="#Sommeil" class="block py-2"><i class="fas fa-bed mr-2"></i> Sommeil</a>
+    <a href="#Énergie" class="block py-2"><i class="fas fa-bolt mr-2"></i> Énergie</a>
+    <a href="#Activité" class="block py-2"><i class="fas fa-running mr-2"></i> Activité</a>
+    
+    <h2 class="font-bold text-lg mb-4 mt-6">Développement Personnel</h2>
+    <a href="#Savoir" class="block py-2"><i class="fas fa-book mr-2"></i> Savoir</a>
+    <a href="#Compétences" class="block py-2"><i class="fas fa-tools mr-2"></i> Compétences</a>
+
+    <h2 class="font-bold text-lg mb-4 mt-6">Finances et Business</h2>
+    <a href="#Finances" class="block py-2"><i class="fas fa-dollar-sign mr-2"></i> Finances</a>
+    <a href="#services-products" class="block py-2"><i class="fas fa-box mr-2"></i> Services et Produits</a>
+    
+    <h2 class="font-bold text-lg mb-4 mt-6">Contact</h2>
+    <a href="#contact" class="block py-2"><i class="fas fa-envelope mr-2"></i> Contact</a>
+</div>
+
+<div class="container p-6">
+    <section id="overview" class="mb-6">
+        <h2 class="text-xl font-bold mb-4">
+            <i class="fas fa-stethoscope mr-2 text-indigo-500"></i>
+            <span class="text-2xl font-bold text-indigo-500">7.88</span>
+        </h2>
+        <div class="stats grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <div class="stat-box bg-blue-600 p-4 rounded-lg shadow-lg">
+                <i class="fas fa-bed text-2xl mb-2 text-white"></i>
+                <h3 class="text-lg font-semibold text-white">Sommeil</h3>
+                <p class="text-white">7h 30m</p>
+                <p class="text-sm text-blue-200">Temps de sommeil recommandé : 7-9 heures</p>
+            </div>
+            <div class="stat-box bg-green-600 p-4 rounded-lg shadow-lg">
+                <i class="fas fa-battery-three-quarters text-2xl mb-2 text-white"></i>
+                <h3 class="text-lg font-semibold text-white">Énergie</h3>
+                <p class="text-white">75%</p>
+                <p class="text-sm text-green-200">Énergie optimale : 70%-90%</p>
+            </div>
+            <div class="stat-box bg-yellow-600 p-4 rounded-lg shadow-lg">
+                <i class="fas fa-running text-2xl mb-2 text-white"></i>
+                <h3 class="text-lg font-semibold text-white">Activité</h3>
+                <p class="text-white">1.4</p>
+                <p class="text-sm text-yellow-200">Niveau d'activité recommandé : 1.5-2.0</p>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- 🌟🌟🌟 DÉBUT SECTION CALCUL DE LA DÉPENSE ÉNERGÉTIQUE JOURNALIÈRE 🌟🌟🌟 -->
+    <!--
+        Cette section contient un formulaire pour calculer la dépense énergétique journalière (DEJ)
+        basée sur les paramètres fournis par l'utilisateur : poids, taille, âge, sexe, et niveau d'activité physique.
+        Utilisation de la formule de Harris-Benedict pour déterminer la DEJ.
+    -->
+    <section id="Énergie" class="mb-6">
+        <h2 class="text-xl font-bold mb-4"><i class="fas fa-utensils mr-2"></i> Alimentation</h2>
+        <div class="stats grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <div class="stat-box bg-gray-800 p-4 rounded-lg">
+                <i class="fas fa-apple-alt text-2xl mb-2"></i>
+                <h3 class="text-lg font-semibold">Calories consommées</h3>
+                <p>2200 kcal</p>
+            </div>
+            <div class="stat-box bg-gray-800 p-4 rounded-lg">
+                <i class="fas fa-carrot text-2xl mb-2"></i>
+                <h3 class="text-lg font-semibold">Repas sains</h3>
+                <p>4/5</p>
+            </div>
+            <div class="stat-box bg-gray-800 p-4 rounded-lg">
+                <i class="fas fa-tachometer-alt text-2xl mb-2"></i>
+                <h3 class="text-lg font-semibold">Hydratation</h3>
+                <p>2L</p>
+            </div>
+        </div>
+
+        <!-- Formulaire de calcul de la dépense énergétique journalière -->
+        <div class="dej-calculator bg-gray-800 p-4 mt-6 rounded-lg">
+            <h3 class="text-lg font-semibold mb-4"><i class="fas fa-calculator mr-2 animate-bounce"></i> Calculer votre dépense énergétique journalière</h3>
+            <form id="dejForm">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label for="poids" class="block text-sm font-medium">Poids (kg)</label>
+                        <input type="number" id="poids" name="poids" class="mt-1 block w-full px-3 py-2 bg-gray-900 border border-gray-700 rounded-md">
+                    </div>
+                    <div>
+                        <label for="taille" class="block text-sm font-medium">Taille (cm)</label>
+                        <input type="number" id="taille" name="taille" class="mt-1 block w-full px-3 py-2 bg-gray-900 border border-gray-700 rounded-md">
+                    </div>
+                    <div>
+                        <label for="age" class="block text-sm font-medium">Âge</label>
+                        <input type="number" id="age" name="age" class="mt-1 block w-full px-3 py-2 bg-gray-900 border border-gray-700 rounded-md">
+                    </div>
+                    <div>
+                        <label for="sexe" class="block text-sm font-medium">Sexe</label>
+                        <select id="sexe" name="sexe" class="mt-1 block w-full px-3 py-2 bg-gray-900 border border-gray-700 rounded-md">
+                            <option value="homme">Homme</option>
+                            <option value="femme">Femme</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="activite" class="block text-sm font-medium">Niveau d'activité physique</label>
+                        <select id="activite" name="activite" class="mt-1 block w-full px-3 py-2 bg-gray-900 border border-gray-700 rounded-md">
+                            <option value="sedentaire">Sédentaire</option>
+                            <option value="leger">Légère activité</option>
+                            <option value="moderee">Activité modérée</option>
+                            <option value="intense">Activité intense</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="button" onclick="calculerDEJ()" class="mt-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md">Calculer</button>
+            </form>
+            <p id="resultatDEJ" class="mt-4 text-lg font-semibold"></p>
+        </div>
+    </section>
+
+    <script>
+    function calculerDEJ() {
+        var poids = document.getElementById("poids").value;
+        var taille = document.getElementById("taille").value;
+        var age = document.getElementById("age").value;
+        var sexe = document.getElementById("sexe").value;
+        var activite = document.getElementById("activite").value;
+
+        // Facteurs de base pour homme et femme (formule de Harris-Benedict)
+        var dej = 0;
+        if (sexe === "homme") {
+            dej = 88.362 + (13.397 * poids) + (4.799 * taille) - (5.677 * age);
+        } else {
+            dej = 447.593 + (9.247 * poids) + (3.098 * taille) - (4.330 * age);
+        }
+
+        // Ajustement selon le niveau d'activité
+        var facteurActivite = {
+            "sedentaire": 1.2,
+            "leger": 1.375,
+            "moderee": 1.55,
+            "intense": 1.725
+        };
+
+        dej *= facteurActivite[activite];
+        
+        // Affichage du résultat
+        document.getElementById("resultatDEJ").textContent = "Votre dépense énergétique journalière est de " + dej.toFixed(2) + " kcal.";
+    }
+    </script>
+    <!-- 🔥🔥🔥 FIN SECTION CALCUL DE LA DÉPENSE ÉNERGÉTIQUE JOURNALIÈRE 🔥🔥🔥 -->
+    <!--
+        Fin de la section pour calculer la DEJ. 
+        La fonction JavaScript 'calculerDEJ()' prend en compte le poids, la taille, l'âge, le sexe et le niveau d'activité.
+        Le résultat est affiché dynamiquement dans l'élément <p> avec l'ID 'resultatDEJ'.
+    -->
+
+
+
+
+
+    <h2 class="text-xl font-bold mb-4 animate-bounce"><i class="fas fa-chart-pie mr-2"></i> Finances</h2>
+    <div id="Finances" class="bg-black rounded-lg p-6 flex items-center space-x-8 mb-6">
+        <!-- Left Section (with the Circle and Arrow)
+        <div class="relative">
+            <div class="w-32 h-32 rounded-full bg-gray-900 relative">
+            <div class="absolute inset-0 flex items-center justify-center">
+                <div class="w-12 h-12 bg-pink-600 rounded-full flex items-center justify-center">
+                <i class="fas fa-arrow-right text-black"></i>
+                </div>
+            </div>
+            </div>
+        </div> -->
+
+        <div class="text-white space-y-4">
+            <div>
+            <p class="text-gray-400">REVENUS</p>
+            <p class="text-pink-500 text-xl">1500 €</p>
+            </div>
+            <div>
+            <p class="text-gray-400">DÉPENSES</p>
+            <p class="text-gray-300 text-2xl">1200 €</p>
+            </div>
+            <div>
+            <p class="text-gray-400">TOTAL</p>
+            <p class="text-gray-300 text-2xl">+ 300 €</p>
+            </div>
+        </div>
+    </div>
+
+    <section id="skills" class="mb-6">
+        <h2 class="text-xl font-bold mb-4"><i class="fas fa-tools mr-2"></i> Compétences</h2>
+        <ul class="list-disc list-inside bg-gray-800 p-2 rounded-lg">
+            <li>Réparation d'ordinateurs (logiciel et matériel hardware software)</li>
+            <li>Réparation téléphones (iPhone, Samsung, batterie, écran)</li>
+            <li>Création de scripts</li>
+            <li>Conception de sites web</li>
+            <li>Retouche photo</li>
+            <li>Logos</li>
+            <li>Jardinage, taille, désherbage, tonte de pelouse</li>
+        </ul>
+    </section>
+
+    <section id="services-products" class="mb-6">
+        <h2 class="text-xl font-bold mb-4"><i class="fas fa-box mr-2 animate-bounce"></i> Services et Produits disponibles</h2>
+        <p>Découvrez une gamme de services et produits pour répondre à vos besoins :</p>
+        <ul class="list-disc list-inside bg-gray-800 p-2 rounded-lg">
+            <li>Réparation d'ordinateurs et téléphones</li>
+            <li>Création de sites web et scripts personnalisés</li>
+            <li>Services de retouche photo et conception graphique</li>
+            <li>Jardinage et entretien extérieur</li>
+        </ul>
+        <p class="mt-4">Explorez plus d'options dans notre <a href="/shop" class="text-blue-500 underline">boutique en ligne</a>.</p>
+    </section>
+
+    <section id="reports" class="mb-6">
+        <h2 class="text-xl font-bold mb-4"><i class="fas fa-file-alt mr-2"></i> Rapports</h2>
+        <p>Cette section contiendra les rapports détaillés...</p>
+    </section>
+
+    <h2 class="font-bold text-lg mb-4 mt-6 text-indigo-600 animate-bounce">The Miracle Morning</h2><!-- The Miracle Morning -->
+    <div id="Morning" class="space-y-6 text-white bg-gray-800 p-4 rounded-lg mb-6">
+
+        <div class="group">
+            <i class="fas fa-praying-hands text-2xl mb-2 text-indigo-400 group-hover:text-indigo-300 transition-colors duration-300"></i>
+            <h3 class="text-lg font-semibold mb-2 text-indigo-500 group-hover:text-white transition-colors duration-300">Silence</h3>
+            <p class="opacity-80 group-hover:opacity-100 transition-opacity duration-300">Commencez la journée avec un moment de calme, de méditation ou de prière pour vous recentrer et apaiser votre esprit.</p>
+        </div>
+
+        <div class="group">
+            <i class="fas fa-apple-alt text-2xl mb-2 text-green-400 group-hover:text-green-300 transition-colors duration-300"></i>
+            <h3 class="text-lg font-semibold mb-2 text-green-500 group-hover:text-white transition-colors duration-300">Affirmations</h3>
+            <p class="opacity-80 group-hover:opacity-100 transition-opacity duration-300">Répétez des affirmations positives qui renforcent votre confiance, vos objectifs et votre vision de vie.</p>
+        </div>
+
+        <div class="group">
+            <i class="fas fa-eye text-2xl mb-2 text-blue-400 group-hover:text-blue-300 transition-colors duration-300"></i>
+            <h3 class="text-lg font-semibold mb-2 text-blue-500 group-hover:text-white transition-colors duration-300">Visualisation</h3>
+            <p class="opacity-80 group-hover:opacity-100 transition-opacity duration-300">Imaginez-vous en train d’atteindre vos objectifs et ressentez les émotions positives associées à leur réalisation.</p>
+        </div>
+
+        <div class="group">
+            <i class="fas fa-dumbbell text-2xl mb-2 text-red-400 group-hover:text-red-300 transition-colors duration-300"></i>
+            <h3 class="text-lg font-semibold mb-2 text-red-500 group-hover:text-white transition-colors duration-300">Exercice</h3>
+            <p class="opacity-80 group-hover:opacity-100 transition-opacity duration-300">Faites de l'exercice pour dynamiser votre corps et votre esprit, que ce soit un simple étirement ou une séance de sport intense.</p>
+        </div>
+
+        <div class="group">
+            <i class="fas fa-book text-2xl mb-2 text-yellow-400 group-hover:text-yellow-300 transition-colors duration-300"></i>
+            <h3 class="text-lg font-semibold mb-2 text-yellow-500 group-hover:text-white transition-colors duration-300">Lecture</h3>
+            <p class="opacity-80 group-hover:opacity-100 transition-opacity duration-300">Lisez des livres inspirants ou éducatifs pour développer votre esprit et acquérir de nouvelles compétences ou connaissances.</p>
+        </div>
+
+        <div class="group">
+            <i class="fas fa-pen text-2xl mb-2 text-purple-400 group-hover:text-purple-300 transition-colors duration-300"></i>
+            <h3 class="text-lg font-semibold mb-2 text-purple-500 group-hover:text-white transition-colors duration-300">Écriture</h3>
+            <p class="opacity-80 group-hover:opacity-100 transition-opacity duration-300">Notez vos pensées, vos idées ou vos progrès dans un journal pour clarifier vos objectifs et suivre votre évolution.</p>
+        </div>
+
+    </div>
+
+    <section id="contact" class="mb-6">
+        <h2 class="text-xl font-bold mb-4"><i class="fas fa-envelope mr-2"></i> Contact</h2>
+        <p>Vous pouvez nous contacter en remplissant le formulaire ci-dessous :</p>
+        <form action="mailto:patrick.assis192@gmail.com" method="post" enctype="text/plain" class="mt-4">
+            <div class="mb-4">
+                <label for="name" class="block text-sm font-medium text-gray-300">Nom :</label>
+                <input type="text" id="name" name="name" class="w-full p-2 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Votre nom" required>
+            </div>
+
+            <div class="mb-4">
+                <label for="email" class="block text-sm font-medium text-gray-300">Email :</label>
+                <input type="email" id="email" name="email" class="w-full p-2 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Votre email" required>
+            </div>
+
+            <div class="mb-4">
+                <label for="message" class="block text-sm font-medium text-gray-300">Message :</label>
+                <textarea id="message" name="message" rows="4" class="w-full p-2 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Votre message" required></textarea>
+            </div>
+
+            <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">Envoyer</button>
+        </form>
+    </section>
+
+    <section id="settings" class="mb-6">
+        <h2 class="text-xl font-bold mb-4"><i class="fas fa-cog mr-2"></i> Paramètres</h2>
+        <p>Paramètres de l'application ici...</p>
+    </section>
+</div>
+
+</body>
+</html>

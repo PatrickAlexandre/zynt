@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tableau de bord interactif pour suivre la santé, le développement personnel, les finances et plus.">
+    <title>Tableau de Bord</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="./styles/arg.css">
+</head>
+
+<body class="bg-gray-900 text-white">
+
+    <header class="p-6 bg-gray-800">
+        <div class="profile-info flex items-center">
+            <div class="relative">
+                <img class="rounded-full" src="https://opgg-static.akamaized.net/meta/images/lol/latest/champion/Draven.png?image=e_upscale,c_crop,h_103,w_103,x_9,y_9/q_auto:good,f_webp,w_100,h_100&v=1724034092925" alt="Image de profil de Patrick Alexandre">
+                <span class="absolute bottom-0 right-0 bg-blue-500 text-white text-xs font-bold rounded-full px-2">352</span>
+            </div>
+            <div class="ml-6">
+                <h1 class="text-white font-bold text-xl">Patrick Alexandre <span class="text-gray-400">#INTJ</span></h1>
+                <div class="text-gray-400 text-sm mt-1 flex items-center">
+                    <i class="fas fa-globe-europe mr-2"></i>
+                    <span>EUW</span>
+                    <span class="mx-2">|</span>
+                    <span class="text-blue-400">Rang Ladder <span class="text-blue-500 font-bold">16</span> (0.0038% meilleurs joueurs)</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="sidebar p-6 bg-gray-800 text-white w-64">
+        <h2 class="font-bold text-lg mb-4">Santé</h2>
+        <a href="#Sommeil" class="block py-2"><i class="fas fa-bed mr-2"></i> Sommeil</a>
+        <a href="#Énergie" class="block py-2"><i class="fas fa-bolt mr-2"></i> Énergie</a>
+        <a href="#Activité" class="block py-2"><i class="fas fa-running mr-2"></i> Activité</a>
+
+        <h2 class="font-bold text-lg mb-4 mt-6">Développement Personnel</h2>
+        <a href="#Savoir" class="block py-2"><i class="fas fa-book mr-2"></i> Savoir</a>
+        <a href="#Compétences" class="block py-2"><i class="fas fa-tools mr-2"></i> Compétences</a>
+
+        <h2 class="font-bold text-lg mb-4 mt-6">Finances et Business</h2>
+        <a href="#Finances" class="block py-2"><i class="fas fa-dollar-sign mr-2"></i> Finances</a>
+        <a href="#services-products" class="block py-2"><i class="fas fa-box mr-2"></i> Services et Produits</a>
+
+        <h2 class="font-bold text-lg mb-4 mt-6">Contact</h2>
+        <a href="#contact" class="block py-2"><i class="fas fa-envelope mr-2"></i> Contact</a>
+    </div>
+
+    <div class="container p-6">
+        <section id="overview" class="mb-6">
+            <h2 class="text-xl font-bold mb-4">
+                <i class="fas fa-stethoscope mr-2 text-indigo-500"></i>
+                <span class="text-2xl text-indigo-500">7.88</span>
+            </h2>
+            <div class="stats grid grid-cols-1 sm:grid-cols-3 gap-6">
+                <div class="stat-box bg-blue-600 p-4 rounded-lg shadow-lg">
+                    <i class="fas fa-bed text-2xl mb-2 text-white"></i>
+                    <h3 class="text-lg font-semibold text-white">Sommeil</h3>
+                    <p class="text-white">7h 30m</p>
+                    <p class="text-sm text-blue-200">Temps de sommeil recommandé : 7-9 heures</p>
+                </div>
+                <div class="stat-box bg-green-600 p-4 rounded-lg shadow-lg">
+                    <i class="fas fa-battery-three-quarters text-2xl mb-2 text-white"></i>
+                    <h3 class="text-lg font-semibold text-white">Énergie</h3>
+                    <p class="text-white">75%</p>
+                    <p class="text-sm text-green-200">Énergie optimale : 70%-90%</p>
+                </div>
+                <div class="stat-box bg-yellow-600 p-4 rounded-lg shadow-lg">
+                    <i class="fas fa-running text-2xl mb-2 text-white"></i>
+                    <h3 class="text-lg font-semibold text-white">Activité</h3>
+                    <p class="text-white">1.4</p>
+                    <p class="text-sm text-yellow-200">Niveau d'activité recommandé : 1.5-2.0</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="Énergie" class="mb-6">
+            <h2 class="text-xl font-bold mb-4"><i class="fas fa-utensils mr-2"></i> Alimentation</h2>
+            <div class="stats grid grid-cols-1 sm:grid-cols-3 gap-6">
+                <div class="stat-box bg-gray-800 p-4 rounded-lg">
+                    <i class="fas fa-apple-alt text-2xl mb-2"></i>
+                    <h3 class="text-lg font-semibold">Calories consommées</h3>
+                    <p>2200 kcal</p>
+                </div>
+                <div class="stat-box bg-gray-800 p-4 rounded-lg">
+                    <i class="fas fa-carrot text-2xl mb-2"></i>
+                    <h3 class="text-lg font-semibold">Repas sains</h3>
+                    <p>4/5</p>
+                </div>
+                <div class="stat-box bg-gray-800 p-4 rounded-lg">
+                    <i class="fas fa-tachometer-alt text-2xl mb-2"></i>
+                    <h3 class="text-lg font-semibold">Hydratation</h3>
+                    <p>2L</p>
+                </div>
+            </div>
+        </section>
+
+        <h2 class="text-xl font-bold mb-4 animate-bounce"><i class="fas fa-chart-pie mr-2"></i> Finances</h2>
+        <div id="Finances" class="bg-black rounded-lg p-6 flex items-center space-x-8 mb-6">
+            <div class="text-white space-y-4">
+                <div>
+                    <p class="text-gray-400">REVENUS</p>
+                    <p class="text-pink-500 text-xl">1500 €</p>
+                </div>
+                <div>
+                    <p class="text-gray-400">DÉPENSES</p>
+                    <p class="text-gray-300 text-2xl">1200 €</p>
+                </div>
+                <div>
+                    <p class="text-gray-400">TOTAL</p>
+                    <p class="text-gray-300 text-2xl">+ 300 €</p>
+                </div>
+            </div>
+        </div>
+
+        <section id="services-products" class="mb-6">
+            <h2 class="text-xl font-bold mb-4"><i class="fas fa-box mr-2 animate-bounce"></i> Services et Produits disponibles</h2>
+            <ul class="list-disc list-inside bg-gray-800 p-2 rounded-lg">
+                <li>Réparation d'ordinateurs et téléphones</li>
+                <li>Création de sites web et scripts personnalisés</li>
+                <li>Services de retouche photo et conception graphique</li>
+                <li>Jardinage et entretien extérieur</li>
+            </ul>
+            <p class="mt-4">Explorez plus d'options dans notre <a href="/shop" class="text-blue-500 underline">boutique en ligne</a>.</p>
+        </section>
+
+        <section id="contact" class="mb-6">
+            <h2 class="text-xl font-bold mb-4"><i class="fas fa-envelope mr-2"></i> Contact</h2>
+            <p>Vous pouvez nous contacter en remplissant le formulaire ci-dessous :</p>
+            <form action="mailto:patrick.assis192@gmail.com" method="post" enctype="text/plain" class="mt-4">
+                <div class="mb-4">
+                    <label for="name" class="block text-sm font-medium text-gray-300">Nom :</label>
+                    <input type="text" id="name" name="name" class="w-full p-2 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Votre nom" required>
+                </div>
+
+                <div class="mb-4">
+                    <label for="email" class="block text-sm font-medium text-gray-300">Email :</label>
+                    <input type="email" id="email" name="email" class="w-full p-2 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Votre email" required>
+                </div>
+
+                <div class="mb-4">
+                    <label for="message" class="block text-sm font-medium text-gray-300">Message :</label>
+                    <textarea id="message" name="message" rows="4" class="w-full p-2 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Votre message" required></textarea>
+                </div>
+
+                <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">Envoyer</button>
+            </form>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-10 mt-16">
+        <div class="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- 1. Section Liens -->
+            <div>
+                <h3 class="font-bold text-xl mb-4">Liens Utiles</h3>
+                <ul>
+                    <li><a href="#overview" class="text-gray-400 hover:text-white">Tableau de Bord</a></li>
+                    <li><a href="#services-products" class="text-gray-400 hover:text-white">Services et Produits</a></li>
+                    <li><a href="#contact" class="text-gray-400 hover:text-white">Contact</a></li>
+                    <li><a href="#Finances" class="text-gray-400 hover:text-white">Finances</a></li>
+                </ul>
+            </div>
+
+            <!-- 2. Newsletter -->
+            <div>
+                <h3 class="font-bold text-xl mb-4">Newsletter</h3>
+                <p class="text-gray-400 mb-4">Inscrivez-vous pour recevoir les dernières actualités :</p>
+                <form class="flex">
+                    <input type="email" class="w-full px-4 py-2 bg-gray-900 text-white rounded-l-lg" placeholder="Votre email">
+                    <button type="submit" class="bg-blue-600 px-4 py-2 rounded-r-lg">S'inscrire</button>
+                </form>
+            </div>
+
+            <!-- 3. Réseaux sociaux -->
+            <div>
+                <h3 class="font-bold text-xl mb-4">Suivez-nous</h3>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-blue-500 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-blue-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-pink-500 hover:text-white"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-red-600 hover:text-white"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <!-- 4. Fonction de recherche -->
+            <div>
+                <h3 class="font-bold text-xl mb-4">Recherche</h3>
+                <form>
+                    <input type="text" class="w-full px-4 py-2 bg-gray-900 text-white rounded-lg" placeholder="Rechercher...">
+                </form>
+            </div>
+        </div>
+
+        <div class="container mx-auto mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- 5. Informations légales -->
+            <p class="text-gray-400 text-center md:text-left">&copy; 2024 Patrick Alexandre. Tous droits réservés.</p>
+
+            <!-- 6. Politique de confidentialité -->
+            <p class="text-gray-400 text-center md:text-right">
+                <a href="#" class="hover:text-white">Politique de Confidentialité</a> |
+                <a href="#" class="hover:text-white">Conditions d'Utilisation</a>
+            </p>
+        </div>
+
+        <div class="container mx-auto mt-8 text-center">
+            <!-- 7. Horaires d'ouverture -->
+            <p class="text-gray-400">Horaires d'ouverture : Lundi - Vendredi : 9h - 18h</p>
+
+            <!-- 8. Fonction multilingue -->
+            <div class="mt-4">
+                <select class="px-4 py-2 bg-gray-900 text-white rounded-lg">
+                    <option value="fr">Français</option>
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                </select>
+            </div>
+
+            <!-- 9. Moyens de paiement -->
+            <div class="mt-6">
+                <h3 class="font-bold text-xl mb-4">Moyens de paiement acceptés</h3>
+                <div class="flex justify-center space-x-4 text-gray-400">
+                    <i class="fab fa-cc-visa text-2xl"></i>
+                    <i class="fab fa-cc-mastercard text-2xl"></i>
+                    <i class="fab fa-cc-paypal text-2xl"></i>
+                    <i class="fab fa-cc-apple-pay text-2xl"></i>
+                </div>
+            </div>
+
+            <!-- 10. Remontée en haut -->
+            <div class="mt-8">
+                <a href="#top" class="text-blue-500 hover:text-white"><i class="fas fa-chevron-up"></i> Haut de page</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

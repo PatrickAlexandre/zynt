@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exemple HTML5 pour Safari</title>
+</head>
+<body>
+
+  <!-- Balises sémantiques HTML5 -->
+  <header>
+    <h1>Bienvenue sur mon site</h1>
+    <nav>
+      <ul>
+        <li><a href="#home">Accueil</a></li>
+        <li><a href="#about">À propos</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home">
+    <h2>Accueil</h2>
+    <p>Ceci est un exemple de section HTML5.</p>
+  </section>
+
+  <article>
+    <h3>Article principal</h3>
+    <p>Cet article est un exemple d'article HTML5 autonome.</p>
+  </article>
+
+  <aside>
+    <p>Contenu complémentaire ici.</p>
+  </aside>
+
+  <footer>
+    <p>&copy; 2024 Mon Site</p>
+  </footer>
+
+  <!-- Formulaires améliorés -->
+  <form>
+    <label for="email">Email :</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="site">Site web :</label>
+    <input type="url" id="site" name="site" required>
+  </form>
+
+  <!-- Multimédia : Vidéo et Audio -->
+  <video controls>
+    <source src="video.mp4" type="video/mp4">
+    Votre navigateur ne supporte pas la vidéo.
+  </video>
+
+  <audio controls>
+    <source src="audio.mp3" type="audio/mpeg">
+    Votre navigateur ne supporte pas l'audio.
+  </audio>
+
+  <!-- Canvas -->
+  <canvas id="myCanvas" width="200" height="200"></canvas>
+  <script>
+    var canvas = document.getElementById('myCanvas');
+    var context = canvas.getContext('2d');
+    context.fillStyle = 'blue';
+    context.fillRect(10, 10, 100, 100);
+  </script>
+
+  <!-- LocalStorage et SessionStorage -->
+  <script>
+    localStorage.setItem('nom', 'Patrick');
+    sessionStorage.setItem('sessionNom', 'Patrick');
+    console.log(localStorage.getItem('nom')); // Patrick
+  </script>
+
+  <!-- API Géolocalisation -->
+  <script>
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function(position) {
+        console.log('Latitude : ' + position.coords.latitude);
+        console.log('Longitude : ' + position.coords.longitude);
+      });
+    } else {
+      console.log('La géolocalisation n\'est pas supportée par ce navigateur.');
+    }
+  </script>
+
+  <!-- API Drag & Drop -->
+  <div id="drag1" draggable="true" ondragstart="drag(event)">Texte à glisser</div>
+  <script>
+    function drag(event) {
+      event.dataTransfer.setData('text', event.target.id);
+    }
+  </script>
+
+  <!-- Web Workers -->
+  <script>
+    if (window.Worker) {
+      var worker = new Worker("worker.js");
+      worker.onmessage = function(event) {
+        console.log('Message du worker: ' + event.data);
+      };
+      worker.postMessage("Hello worker");
+    }
+  </script>
+
+</body>
+</html>

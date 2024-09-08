@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tableau de bord interactif pour suivre la santé, le développement personnel, les finances et plus.">
+    <title>Tableau de Bord</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="./styles/arg.css">
+</head>
+
+<body class="bg-gray-900 text-white">
+
+    <header class="p-6 shadow-lg rounded-md bg-gray-900 sticky top-4 z-50 block lg:hidden">
+        <div class="profile-info flex items-center">
+            <div class="relative">
+                <img class="rounded-full ring-4 ring-blue-400 shadow-lg transform hover:scale-110 transition-transform duration-300" src="https://opgg-static.akamaized.net/meta/images/lol/latest/champion/Draven.png?image=e_upscale,c_crop,h_103,w_103,x_9,y_9/q_auto:good,f_webp,w_100,h_100&v=1724034092925"
+                    alt="Image de profil de Patrick Alexandre">
+                <span class="absolute bottom-0 right-0 bg-yellow-500 text-black text-xs font-bold rounded-full px-2">352</span>
+            </div>
+            <div class="ml-6">
+                <h1 class="text-white font-bold text-xl tracking-wide">Patrick Alexandre <span class="text-gray-400">#INTJ</span></h1>
+                <div class="text-gray-400 text-sm mt-1 flex items-center">
+                    <i class="fas fa-globe-europe mr-2"></i>
+                    <span>EUW</span>
+                    <span class="mx-2">|</span>
+                    <span class="text-blue-400">Rang Ladder <span class="text-blue-500 font-bold">16</span> (0.0038% meilleurs joueurs)</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+
+
+
+    <nav class="sidebar p-6 bg-gray-800 text-white w-64 h-screen">
+        <h2 class="font-bold text-lg mb-4">Santé</h2>
+        <a href="#Sommeil" class="flex items-center py-2 hover:bg-gray-700 rounded transition-colors duration-300">
+            <i class="fas fa-bed mr-2"></i> Sommeil
+        </a>
+        <a href="#Énergie" class="flex items-center py-2 hover:bg-gray-700 rounded transition-colors duration-300">
+            <i class="fas fa-bolt mr-2"></i> Énergie
+        </a>
+        <a href="#Activité" class="flex items-center py-2 hover:bg-gray-700 rounded transition-colors duration-300">
+            <i class="fas fa-running mr-2"></i> Activité
+        </a>
+
+        <div class="border-t border-gray-700 my-6"></div>
+
+        <h2 class="font-bold text-lg mb-4">Développement Personnel</h2>
+        <a href="#Savoir" class="flex items-center py-2 hover:bg-gray-700 rounded transition-colors duration-300">
+            <i class="fas fa-book mr-2"></i> Savoir
+        </a>
+        <a href="#Compétences" class="flex items-center py-2 hover:bg-gray-700 rounded transition-colors duration-300">
+            <i class="fas fa-tools mr-2"></i> Compétences
+        </a>
+
+        <div class="border-t border-gray-700 my-6"></div>
+
+        <h2 class="font-bold text-lg mb-4">Finances et Business</h2>
+        <a href="#Finances" class="flex items-center py-2 hover:bg-gray-700 rounded transition-colors duration-300">
+            <i class="fas fa-dollar-sign mr-2"></i> Finances
+        </a>
+        <a href="#services-products" class="flex items-center py-2 hover:bg-gray-700 rounded transition-colors duration-300">
+            <i class="fas fa-box mr-2"></i> Services et Produits
+        </a>
+
+        <div class="border-t border-gray-700 my-6"></div>
+
+        <h2 class="font-bold text-lg mb-4">Contact</h2>
+        <a href="#contact" class="flex items-center py-2 hover:bg-gray-700 rounded transition-colors duration-300">
+            <i class="fas fa-envelope mr-2"></i> Contact
+        </a>
+    </nav>
+
+
+
+
+
+
+    <div class="container p-6">
+        <section id="overview" class="mb-6">
+            <h2 class="text-xl font-bold mb-4">
+                <i class="fas fa-stethoscope mr-2 text-indigo-500"></i>
+                <span class="text-2xl text-indigo-500">7.88</span>
+            </h2>
+            <div class="stats grid grid-cols-1 sm:grid-cols-3 gap-6">
+                <div class="stat-box bg-blue-600 p-4 rounded-lg shadow-lg">
+                    <i class="fas fa-bed text-2xl mb-2 text-white"></i>
+                    <h3 class="text-lg font-semibold text-white">Sommeil</h3>
+                    <p class="text-white">7h 30m</p>
+                    <p class="text-sm text-blue-200">Temps de sommeil recommandé : 7-9 heures</p>
+                </div>
+                <div class="stat-box bg-green-600 p-4 rounded-lg shadow-lg">
+                    <i class="fas fa-battery-three-quarters text-2xl mb-2 text-white"></i>
+                    <h3 class="text-lg font-semibold text-white">Énergie</h3>
+                    <p class="text-white">75%</p>
+                    <p class="text-sm text-green-200">Énergie optimale : 70%-90%</p>
+                </div>
+                <div class="stat-box bg-yellow-600 p-4 rounded-lg shadow-lg">
+                    <i class="fas fa-running text-2xl mb-2 text-white"></i>
+                    <h3 class="text-lg font-semibold text-white">Activité</h3>
+                    <p class="text-white">1.4</p>
+                    <p class="text-sm text-yellow-200">Niveau d'activité recommandé : 1.5-2.0</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="Énergie" class="mb-6">
+            <h2 class="text-xl font-bold mb-4"><i class="fas fa-utensils mr-2"></i> Alimentation</h2>
+
+            <div class="dej-calculator bg-gray-800 p-4 mt-6 mb-4 rounded-lg">
+                <h3 class="text-lg font-semibold mb-4"><i class="fas fa-calculator mr-2 animate-bounce"></i> Calculer votre dépense énergétique journalière</h3>
+                <form id="dejForm">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label for="poids" class="block text-sm font-medium">Poids (kg)</label>
+                            <input type="number" id="poids" name="poids" class="mt-1 block w-full px-3 py-2 bg-gray-900 border border-gray-700 rounded-md" required>
+                        </div>
+                        <div>
+                            <label for="taille" class="block text-sm font-medium">Taille (cm)</label>
+                            <input type="number" id="taille" name="taille" class="mt-1 block w-full px-3 py-2 bg-gray-900 border border-gray-700 rounded-md" required>
+                        </div>
+                        <div>
+                            <label for="age" class="block text-sm font-medium">Âge</label>
+                            <input type="number" id="age" name="age" class="mt-1 block w-full px-3 py-2 bg-gray-900 border border-gray-700 rounded-md" required>
+                        </div>
+                        <div>
+                            <label for="sexe" class="block text-sm font-medium">Sexe</label>
+                            <select id="sexe" name="sexe" class="mt-1 block w-full px-3 py-2 bg-gray-900 border border-gray-700 rounded-md" required>
+                                <option value="homme">Homme</option>
+                                <option value="femme">Femme</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="activite" class="block text-sm font-medium">Niveau d'activité physique</label>
+                            <select id="activite" name="activite" class="mt-1 block w-full px-3 py-2 bg-gray-900 border border-gray-700 rounded-md" required>
+                                <option value="sedentaire">Sédentaire</option>
+                                <option value="leger">Légère activité</option>
+                                <option value="moderee">Activité modérée</option>
+                                <option value="intense">Activité intense</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="button" onclick="calculerDEJ()" class="mt-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md" aria-label="Calculer la dépense énergétique journalière">Calculer</button>
+                </form>
+                <p id="resultatDEJ" class="mt-4 text-lg font-semibold"></p>
+            </div>
+
+            <div class="macronutrients-section">
+                <h2 class="text-2xl font-bold mb-4">Macronutriments</h2>
+                <div class="stats grid grid-cols-1 sm:grid-cols-3 gap-6">
+                    <div class="stat-box bg-gray-800 p-4 rounded-lg">
+                        <i class="fas fa-bread-slice text-2xl mb-2"></i>
+                        <h3 class="text-lg font-semibold">Glucides</h3>
+                        <p>250g</p>
+                    </div>
+                    <div class="stat-box bg-gray-800 p-4 rounded-lg">
+                        <i class="fas fa-drumstick-bite text-2xl mb-2"></i>
+                        <h3 class="text-lg font-semibold">Protéines</h3>
+                        <p>150g</p>
+                    </div>
+                    <div class="stat-box bg-gray-800 p-4 rounded-lg">
+                        <i class="fas fa-cheese text-2xl mb-2"></i>
+                        <h3 class="text-lg font-semibold">Lipides</h3>
+                        <p>70g</p>
+                    </div>
+                </div>
+            </div>
+
+    <!-- Tableau des valeurs nutritionnelles -->
+    <div class="nutrition-table mt-8">
+        <h3 class="text-xl font-semibold mb-4">Valeurs Nutritionnelles</h3>
+        <table class="min-w-full table-auto bg-gray-800 text-white rounded-lg">
+            <thead>
+                <tr class="bg-gray-700">
+                    <th class="px-4 py-2">Nutriment</th>
+                    <th class="px-4 py-2">Quantité</th>
+                    <th class="px-4 py-2">% Valeurs Journalières</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="border px-4 py-2">Glucides</td>
+                    <td class="border px-4 py-2">250g</td>
+                    <td class="border px-4 py-2">83%</td>
+                </tr>
+                <tr class="bg-gray-700">
+                    <td class="border px-4 py-2">Protéines</td>
+                    <td class="border px-4 py-2">150g</td>
+                    <td class="border px-4 py-2">100%</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">Lipides</td>
+                    <td class="border px-4 py-2">70g</td>
+                    <td class="border px-4 py-2">50%</td>
+                </tr>
+                <tr class="bg-gray-700">
+                    <td class="border px-4 py-2">Fibres</td>
+                    <td class="border px-4 py-2">30g</td>
+                    <td class="border px-4 py-2">120%</td>
+                </tr>
+                <tr>
+                    <td class="border px-4 py-2">Sucres</td>
+                    <td class="border px-4 py-2">50g</td>
+                    <td class="border px-4 py-2">55%</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+            <div class="hidden stats grid grid-cols-1 sm:grid-cols-3 gap-6">
+                <div class="stat-box bg-gray-900 p-4 rounded-lg">
+                    <i class="fas fa-apple-alt text-2xl mb-2"></i>
+                    <h3 class="text-lg font-semibold">Calories consommées</h3>
+                    <p>2200 kcal</p>
+                </div>
+                <div class="stat-box bg-gray-900 p-4 rounded-lg">
+                    <i class="fas fa-carrot text-2xl mb-2"></i>
+                    <h3 class="text-lg font-semibold">Repas sains</h3>
+                    <p>4/5</p>
+                </div>
+                <div class="stat-box bg-gray-900 p-4 rounded-lg">
+                    <i class="fas fa-glass-water text-2xl mb-2"></i>
+                    <h3 class="text-lg font-semibold">Hydratation</h3>
+                    <p>2L</p>
+                </div>
+            </div>
+
+        </section>
+
+        <h2 class="text-xl font-bold mb-4"><i class="fas fa-chart-pie mr-2"></i> Finances</h2>
+        <div id="Finances" class="bg-black rounded-lg p-6 flex items-center space-x-8 mb-6">
+            <div class="text-white space-y-4">
+                <div>
+                    <p class="text-gray-400">REVENUS</p>
+                    <p class="text-pink-500 text-xl">1500 €</p>
+                </div>
+                <div>
+                    <p class="text-gray-400">DÉPENSES</p>
+                    <p class="text-gray-300 text-2xl">1200 €</p>
+                </div>
+                <div>
+                    <p class="text-gray-400">TOTAL</p>
+                    <p class="text-gray-300 text-2xl animate-pulse">+ 300 €</p>
+                </div>
+            </div>
+        </div>
+
+        <section id="skills" class="mb-6">
+            <h2 class="text-xl font-bold mb-4"><i class="fas fa-tools mr-2"></i> Compétences</h2>
+            <ul class="list-disc list-inside bg-gray-800 p-2 rounded-lg">
+                <li>Réparation d'ordinateurs (logiciel et matériel hardware software)</li>
+                <li>Réparation téléphones (iPhone, Samsung, batterie, écran)</li>
+                <li>Création de scripts</li>
+                <li>Conception de sites web</li>
+                <li>Retouche photo</li>
+                <li>Logos</li>
+                <li>Jardinage, taille, désherbage, tonte de pelouse</li>
+            </ul>
+        </section>
+
+        <section id="services-products" class="mb-6">
+            <h2 class="text-xl font-bold mb-4"><i class="fas fa-box mr-2 animate-bounce"></i> Services et Produits disponibles</h2>
+            <p>Découvrez une gamme de services et produits pour répondre à vos besoins :</p>
+            <ul class="list-disc list-inside bg-gray-800 p-2 rounded-lg">
+                <li>Réparation d'ordinateurs et téléphones</li>
+                <li>Création de sites web et scripts personnalisés</li>
+                <li>Services de retouche photo et conception graphique</li>
+                <li>Jardinage et entretien extérieur</li>
+            </ul>
+            <p class="mt-4">Explorez plus d'options dans notre <a href="/shop" class="text-blue-500 underline">boutique en ligne</a>.</p>
+        </section>
+
+        <section id="reports" class="mb-6">
+            <h2 class="text-xl font-bold mb-4"><i class="fas fa-file-alt mr-2"></i> Rapports</h2>
+            <p>Cette section contiendra les rapports détaillés...</p>
+        </section>
+
+        <h2 class="font-bold text-lg mb-4 mt-6 text-indigo-600 animate-bounce">The Miracle Morning</h2>
+        <div id="Morning" class="space-y-6 text-white bg-gray-800 p-4 rounded-lg mb-6">
+            <div class="group">
+                <i class="fas fa-praying-hands text-2xl mb-2 text-indigo-400 group-hover:text-indigo-300 transition-colors duration-300"></i>
+                <h3 class="text-lg font-semibold mb-2 text-indigo-500 group-hover:text-white transition-colors duration-300">Silence</h3>
+                <p class="opacity-80 group-hover:opacity-100 transition-opacity duration-300">Commencez la journée avec un moment de calme, de méditation ou de prière pour vous recentrer et apaiser votre esprit.</p>
+            </div>
+
+            <div class="group">
+                <i class="fas fa-apple-alt text-2xl mb-2 text-green-400 group-hover:text-green-300 transition-colors duration-300"></i>
+                <h3 class="text-lg font-semibold mb-2 text-green-500 group-hover:text-white transition-colors duration-300">Affirmations</h3>
+                <p class="opacity-80 group-hover:opacity-100 transition-opacity duration-300">Répétez des affirmations positives qui renforcent votre confiance, vos objectifs et votre vision de vie.</p>
+            </div>
+
+            <div class="group">
+                <i class="fas fa-eye text-2xl mb-2 text-blue-400 group-hover:text-blue-300 transition-colors duration-300"></i>
+                <h3 class="text-lg font-semibold mb-2 text-blue-500 group-hover:text-white transition-colors duration-300">Visualisation</h3>
+                <p class="opacity-80 group-hover:opacity-100 transition-opacity duration-300">Imaginez-vous en train d’atteindre vos objectifs et ressentez les émotions positives associées à leur réalisation.</p>
+            </div>
+
+            <div class="group">
+                <i class="fas fa-dumbbell text-2xl mb-2 text-red-400 group-hover:text-red-300 transition-colors duration-300"></i>
+                <h3 class="text-lg font-semibold mb-2 text-red-500 group-hover:text-white transition-colors duration-300">Exercice</h3>
+                <p class="opacity-80 group-hover:opacity-100 transition-opacity duration-300">Faites de l'exercice pour dynamiser votre corps et votre esprit, que ce soit un simple étirement ou une séance de sport intense.</p>
+            </div>
+
+            <div class="group">
+                <i class="fas fa-book text-2xl mb-2 text-yellow-400 group-hover:text-yellow-300 transition-colors duration-300"></i>
+                <h3 class="text-lg font-semibold mb-2 text-yellow-500 group-hover:text-white transition-colors duration-300">Lecture</h3>
+                <p class="opacity-80 group-hover:opacity-100 transition-opacity duration-300">Lisez des livres inspirants ou éducatifs pour développer votre esprit et acquérir de nouvelles compétences ou connaissances.</p>
+            </div>
+
+            <div class="group">
+                <i class="fas fa-pen text-2xl mb-2 text-purple-400 group-hover:text-purple-300 transition-colors duration-300"></i>
+                <h3 class="text-lg font-semibold mb-2 text-purple-500 group-hover:text-white transition-colors duration-300">Écriture</h3>
+                <p class="opacity-80 group-hover:opacity-100 transition-opacity duration-300">Notez vos pensées, vos idées ou vos progrès dans un journal pour clarifier vos objectifs et suivre votre évolution.</p>
+            </div>
+        </div>
+
+        <section id="contact" class="mb-6">
+            <h2 class="text-xl font-bold mb-4"><i class="fas fa-envelope mr-2"></i> Contact</h2>
+            <p>Vous pouvez nous contacter en remplissant le formulaire ci-dessous :</p>
+            <form action="mailto:patrick.assis192@gmail.com" method="post" enctype="text/plain" class="mt-4">
+                <div class="mb-4">
+                    <label for="name" class="block text-sm font-medium text-gray-300">Nom :</label>
+                    <input type="text" id="name" name="name" class="w-full p-2 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Votre nom" required>
+                </div>
+
+                <div class="mb-4">
+                    <label for="email" class="block text-sm font-medium text-gray-300">Email :</label>
+                    <input type="email" id="email" name="email" class="w-full p-2 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Votre email" required>
+                </div>
+
+                <div class="mb-4">
+                    <label for="message" class="block text-sm font-medium text-gray-300">Message :</label>
+                    <textarea id="message" name="message" rows="4" class="w-full p-2 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Votre message" required></textarea>
+                </div>
+
+                <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">Envoyer</button>
+            </form>
+        </section>
+
+        <section id="settings" class="mb-6">
+            <h2 class="text-xl font-bold mb-4"><i class="fas fa-cog mr-2"></i> Paramètres</h2>
+            <p>Paramètres de l'application ici...</p>
+        </section>
+    </div>
+
+</body>
+
+</html>
