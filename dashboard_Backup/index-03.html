@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recherche de Besoins - Gaming Style</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/quagga/0.12.1/quagga.min.js"></script>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body class="bg-gray-900 text-gray-100 antialiased font-mono">
+
+    <!-- Navbar -->
+    <nav class="bg-gray-800 p-4 border-b-4 border-green-500 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-green-500 text-3xl font-extrabold flex items-center gap-2">
+                <i class="fas fa-gamepad"></i> IRL Gaming Dashboard
+            </h1>
+        </div>
+    </nav>
+
+    <!-- Section: Finances personnelles -->
+    <section class="p-6">
+        <h2 class="text-3xl font-extrabold mb-6 text-green-500 flex items-center gap-2">
+            <i class="fas fa-dollar-sign"></i> Finance & Économie
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Suivi des Dépenses -->
+            <div class="bg-gray-800 shadow-lg p-6 rounded-lg hover:shadow-2xl transition-shadow duration-300">
+                <h3 class="text-xl text-green-400 font-bold mb-2">Suivi des Dépenses</h3>
+                <p class="text-gray-300">Cette semaine : <span class="font-bold text-green-500">350€</span></p>
+                <p class="text-gray-300">Budget : <span class="font-bold text-green-500">2000€</span></p>
+            </div>
+
+            <!-- Part des Dépenses / catégorie Socioprofessionelle -->
+            <div class="bg-gray-800 shadow-lg p-6 rounded-lg hover:shadow-2xl transition-shadow duration-300">
+                <h3 class="text-xl text-green-400 font-bold mb-2">Part des Dépenses / catégorie Socioprofessionelle</h3>
+            </div>
+
+            <!-- Chart -->
+            <div class="bg-gray-800 shadow-lg p-6 rounded-lg hover:shadow-2xl transition-shadow duration-300">
+                <h3 class="text-xl text-green-400 font-bold mb-2">Graphique</h3>
+            </div>
+
+            <!-- Investir et Épargner -->
+            <div class="bg-gray-800 shadow-lg p-6 rounded-lg hover:shadow-2xl transition-shadow duration-300">
+                <h3 class="text-xl text-green-400 font-bold mb-2">Investir et Épargner (Cheat Codes)</h3>
+            </div>
+
+            <!-- Feuille de Calculs -->
+            <div class="bg-gray-800 shadow-lg p-6 rounded-lg hover:shadow-2xl transition-shadow duration-300">
+                <h3 class="text-xl text-green-400 font-bold mb-2">Feuille de Calculs</h3>
+                <iframe class="w-full h-48 rounded-md border border-green-500" src="https://docs.google.com/spreadsheets/d/1qvuZP0dtyuugj_6b5K4iJTEB-4RRmB2YO_mE97vXshk/preview" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Productivité -->
+    <section class="p-6 bg-gray-800">
+        <h2 class="text-3xl font-extrabold mb-6 text-blue-500 flex items-center gap-2">
+            <i class="fas fa-clock animate-pulse"></i> Gestion du temps & Productivité
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Développement personnel -->
+            <div class="bg-gray-900 shadow-lg p-6 rounded-lg hover:shadow-2xl transition-shadow duration-300">
+                <h3 class="text-xl text-blue-400 font-bold mb-2">Le livre des Décisions</h3>
+            </div>
+
+            <!-- Idées d'Optimisation de la Productivité -->
+            <div class="bg-gray-900 shadow-lg p-6 rounded-lg hover:shadow-2xl transition-shadow duration-300">
+                <h3 class="text-xl text-blue-400 font-bold mb-4">Automatiser</h3>
+                <ol class="list-decimal list-inside text-gray-300 space-y-1">
+                    <li>Prioriser les tâches (Méthode Eisenhower)</li>
+                    <li>Adopter une mentalité Kaizen</li>
+                    <li>Régularité du sommeil et pauses régulières</li>
+                    <li>Bloquer du temps pour soi (Time Blocking)</li>
+                    <li>Utiliser la méthode Pomodoro</li>
+                    <li>Décomposer les tâches complexes</li>
+                    <li>Utiliser des outils de gestion de projet</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Santé & Bien-être -->
+    <section class="p-6">
+        <h2 class="text-3xl font-extrabold mb-6 text-red-500 flex items-center gap-2">
+            <i class="fas fa-heartbeat"></i> Santé & Bien-être
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- API OpenFoodFacts -->
+            <div class="bg-gray-800 shadow-lg p-6 rounded-lg hover:shadow-2xl transition-shadow duration-300">
+                <input type="text" id="barcode" placeholder="Entrez un code-barres" class="p-2 border border-green-500 bg-gray-900 text-gray-300 rounded-md w-full mb-4 focus:outline-none focus:ring-2 focus:ring-green-500">
+                <button onclick="fetchNutriments(document.getElementById('barcode').value)" class="bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-700 transition">Rechercher</button>
+                <div id="product-info" class="mt-4">
+                    <img id="product-image" src="" alt="Image du produit" class="w-48 h-auto mx-auto mb-4 hidden">
+                    <div id="nutriments"></div>
+                </div>
+                <hr class="mt-4 border-green-500">
+                <a href="https://chatgpt.com/g/g-3VrgJ1GpH-sous-chef" target="_blank" class="mt-4 block bg-gray-800 text-white text-center py-3 rounded-md hover:bg-green-500 transition">Accédez à Sous-Chef</a>
+            </div>
+
+            <!-- Suivi des calories -->
+            <div class="bg-gray-800 shadow-lg p-6 rounded-lg hover:shadow-2xl transition-shadow duration-300">
+                <h1 class="text-3xl font-extrabold text-center text-green-500 mb-4">Suivi des calories</h1>
+
+                <div class="mt-4 bg-gray-900 rounded-full h-8 mb-4">
+                    <div id="barreProgress" class="bg-green-500 h-8 rounded-full text-white text-center leading-8">Suivez votre objectif calorique</div>
+                </div>
+            </div>
+
+            <!-- Suivi du Sommeil -->
+            <div class="bg-gray-800 shadow-lg p-6 rounded-lg hover:shadow-2xl transition-shadow duration-300">
+                <h3 class="text-xl text-red-400 font-bold mb-2">Suivi du Sommeil</h3>
+                <p class="text-gray-300">Heures de sommeil : <span class="font-bold text-green-500">7h</span></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Maison Connectée -->
+    <section class="p-6 bg-gray-800">
+        <h1 class="text-3xl font-extrabold mb-6 text-yellow-500 flex items-center gap-2">
+            <i class="fas fa-lightbulb"></i> Technologie et Informatique
+        </h1>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Contrôle de l'éclairage -->
+            <div class="bg-gray-900 shadow-lg p-6 rounded-lg hover:shadow-2xl transition-shadow duration-300">
+                <h3 class="text-xl text-yellow-400 font-bold mb-2">Contrôle de l'éclairage</h3>
+                <input type="checkbox" checked class="toggle-checkbox bg-yellow-500 border-gray-700 focus:ring-yellow-400 rounded-full">
+            </div>
+
+            <!-- Ajustement de la luminosité -->
+            <div class="bg-gray-900 shadow-lg p-6 rounded-lg hover:shadow-2xl transition-shadow duration-300">
+                <h3 class="text-xl text-yellow-400 font-bold mb-2">Ajustement de la Luminosité</h3>
+                <input type="range" class="w-full bg-yellow-500" min="0" max="100" value="75">
+            </div>
+
+            <!-- Couleurs des Lumières -->
+            <div class="bg-gray-900 shadow-lg p-6 rounded-lg hover:shadow-2xl transition-shadow duration-300">
+                <h3 class="text-xl text-yellow-400 font-bold mb-2">Couleurs des Lumières</h3>
+                <input type="color" id="lightColorPicker" class="bg-yellow-500 rounded-lg w-full h-10">
+            </div>
+
+            <!-- OSINT Card -->
+            <div class="bg-gray-900 shadow-lg p-6 rounded-lg hover:shadow-2xl transition-shadow duration-300">
+                <h3 class="text-xl text-yellow-400 font-bold mb-2">OSINT (Open Source Intelligence)</h3>
+                <p class="text-gray-300 mb-4">
+                    L'OSINT consiste à collecter des informations à partir de sources publiques. Utilisé pour la veille, la cybersécurité, et l'enquête en ligne.
+                </p>
+                <ul class="list-disc list-inside text-gray-300 space-y-2">
+                    <li><span class="font-bold text-green-500">Recherche Web :</span> Explorer des sites, des forums, et des bases de données publiques.</li>
+                    <li><span class="font-bold text-green-500">Réseaux Sociaux :</span> Analyse des profils et activités sur les plateformes sociales.</li>
+                    <li><span class="font-bold text-green-500">Cybersécurité :</span> Identification des menaces via des informations accessibles publiquement.</li>
+                </ul>
+                <a href="https://www.example.com" target="_blank" class="block mt-4 bg-yellow-500 text-center text-black font-bold py-2 px-4 rounded-md hover:bg-yellow-600 transition">
+                    En savoir plus
+                </a>
+            </div>
+
+        </div>
+
+
+
+    </section>
+
+    <!-- Section: Divertissement -->
+    <section class="p-6">
+        <h2 class="text-3xl font-extrabold mb-6 text-blue-500 flex items-center gap-2">
+            <i class="fas fa-play"></i> Divertissement
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Lecteur Spotify -->
+            <div class="bg-gray-800 shadow-lg p-6 rounded-lg hover:shadow-2xl transition-shadow duration-300">
+                <h3 class="text-xl text-blue-400 font-bold mb-2">Spotify</h3>
+                <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DXcBWIGoYBM5M" width="100%" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+            </div>
+
+            <!-- Lecteur YouTube -->
+            <div class="bg-gray-800 shadow-lg p-6 rounded-lg hover:shadow-2xl transition-shadow duration-300">
+                <h3 class="text-xl text-blue-400 font-bold mb-2">YouTube</h3>
+                <iframe class="rounded" width="100%" height="380" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <!-- Réseaux Sociaux -->
+        <div class="mt-6 flex justify-center space-x-4">
+            <a href="https://www.facebook.com" target="_blank" class="text-blue-600 text-2xl hover:text-blue-800 transition">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://www.instagram.com" target="_blank" class="text-pink-600 text-2xl hover:text-pink-800 transition">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.twitter.com" target="_blank" class="text-blue-400 text-2xl hover:text-blue-600 transition">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.linkedin.com" target="_blank" class="text-blue-700 text-2xl hover:text-blue-900 transition">
+                <i class="fab fa-linkedin"></i>
+            </a>
+        </div>
+    </section>
+
+</body>
+
+</html>

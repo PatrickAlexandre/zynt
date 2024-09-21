@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upgrade Your Mind !</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body class="bg-gray-100 font-sans">
+
+    <!-- Main Container -->
+    <div class="flex min-h-screen">
+        
+        <!-- Content Area -->
+        <div class="w-full lg:w-4/5 p-8">
+            <!-- Header Section -->
+            <header class="mb-8 shadow-lg bg-gray-900 text-white rounded-md p-4">
+                <div class="name-container text-2xl">
+                    <i id="Profil" title="Modifier le profil" class="fas fa-user mr-2" onclick="alert('Modifier le profil')"></i><!-- 🛠️ Développer : Ajout d'un événement onclick sur une page JS dédiée, pour afficher un Modal, lors du clic sur l'icône de profil -->
+                    <strong class="mr-4">Patrick Alexandre</strong><span class="text-gray-700">#INTJ</span>      
+                </div>
+                <ul class="team-and-rank flex space-x-4 mt-2">
+                    <li class="hidden team flex items-center">
+                        <img src="https://s-qwer.op.gg/images/lol/teams/2023sp_th.png?image=q_auto:good,f_webp,w_32,h_32&amp;v=1724034092925" width="16" height="16" alt="Team Heretics" class="team-logo">
+                        Team G2 <span class="name">[1 AUTO 666 DMG]</span>
+                    </li>
+                    <li class="region flex items-center">
+                        <img src="https://s-lol-web.op.gg/assets/images/regions/01-icon-icon-euw.svg?v=1724034092925" width="16" height="16" alt="euw">
+                        <span>euw</span>
+                    </li>
+                    <li class="rank">
+                        Rang Ladder <span class="ranking">2</span> (0.0001% meilleurs joueurs)
+                    </li>
+                </ul>
+            </header>
+
+            <!-- Cartes de la vue générale des Statisiques du Personnage (correspond au panneau bas gauche sur League of Legends) -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+
+                <!-- Paramètres physiologiques (signes vitaux) -->
+                <div class="bg-white p-4 rounded shadow">
+                    <h2 class="text-lg font-bold"><i class="fas fa-heartbeat"></i> Paramètres physiologiques (signes vitaux)</h2>
+                    <p>Ce sont les métriques directement liées à la santé et au fonctionnement du corps humain.</p>
+
+                    <p><strong>Fréquence cardiaque :</strong> nombre de battements du cœur par minute. Normalement entre 60 et 100 battements par minute (BPM) au repos.</p>
+                    <p><strong>Tension artérielle :</strong> la pression du sang sur les parois des artères. Une valeur normale est généralement autour de 120/80 mmHg.</p>
+                    <p><strong>Fréquence respiratoire :</strong> nombre de respirations par minute. Normalement entre 12 et 20 respirations par minute chez un adulte au repos.</p>
+                    <p><strong>Température corporelle :</strong> la température moyenne du corps humain est autour de 36,5-37,5°C.</p>
+                    <p><strong>Saturation en oxygène (SpO2) :</strong> pourcentage de l'hémoglobine saturée en oxygène. Une valeur normale se situe autour de 95-100 %.</p>
+                </div>
+
+                <!-- Activité Box -->
+                <div class="bg-white p-4 rounded shadow">
+                    <h2 class="text-lg font-bold"><i class="fas fa-running"></i> Activité</h2>
+                    <p class="mt-2">Niveau d'Activité Physique : <strong>1,6</strong></p>
+                    <p class="text-gray-600">Objectif quotidien : 1,8.</p>
+                </div>
+
+                <!-- Nutrition et hydratation -->
+                <div class="bg-white p-4 rounded shadow">
+                    <h2 class="text-lg font-bold"><i class="fas fa-utensils"></i> Nutrition et hydratation</h2>
+                    <p>L'apport en nourriture et en eau est crucial pour maintenir l'énergie, la régénération cellulaire et l'homéostasie.</p>
+
+                    <p><strong>Apport calorique :</strong> l’apport énergétique nécessaire varie selon les individus, mais se situe généralement autour de 2000 à 2500 kcal/jour pour un adulte.</p>
+                    <p><strong>Hydratation :</strong> l’eau est essentielle, et les besoins varient entre 2 et 3 litres par jour pour un adulte moyen.</p>
+                    <p><strong>Macronutriments :</strong> protéines, glucides, et lipides doivent être consommés dans des proportions équilibrées.</p>
+                    <p><strong>Micronutriments :</strong> vitamines et minéraux essentiels comme le fer, le magnésium, et la vitamine D.</p>
+                </div>
+
+                <!-- Cycle de sommeil -->
+                <div class="bg-white p-4 rounded shadow">
+                    <h2 class="text-lg font-bold"><i class="fas fa-bed"></i> Cycle de sommeil</h2>
+                    <p class="mt-2">Durée de sommeil : un adulte a besoin d'environ 7 à 9 heures de sommeil par nuit.</p>
+                    <p><strong>Qualité du sommeil :</strong> la proportion de sommeil profond et de sommeil paradoxal est cruciale pour la régénération physique et mentale.</p>
+                    <p class="text-gray-600">Le sommeil est indispensable à la récupération et au fonctionnement cognitif.</p>
+                </div>
+
+            </div>
+
+            <!-- Morning Miracle -->
+            <div class="bg-white p-6 mb-8 rounded shadow">
+                <h2 class="text-xl font-bold mb-4"><i class="fas fa-sun animate-bounce"></i> QUÊTES JOURNALIÈRES</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                    <!-- Silence -->
+                    <div class="bg-gray-100 p-4 rounded shadow">
+                        <h3 class="text-lg font-semibold mb-2"><i class="fas fa-praying-hands"></i> Silence</h3>
+                        <p class="text-gray-700">🧘‍♂️ Prenez quelques minutes pour méditer ou pratiquer la gratitude afin de commencer votre journée dans le calme et la sérénité.</p>
+                    </div>
+
+                    <!-- Affirmations -->
+                    <div class="bg-gray-100 p-4 rounded shadow">
+                        <h3 class="text-lg font-semibold mb-2"><i class="fas fa-bullhorn"></i> Affirmations</h3>
+                        <p class="text-gray-700">💬 Répétez des affirmations positives pour programmer votre esprit vers la réussite et renforcer votre confiance en vous.</p>
+                    </div>
+
+                    <!-- Visualisation -->
+                    <div class="bg-gray-100 p-4 rounded shadow">
+                        <h3 class="text-lg font-semibold mb-2"><i class="fas fa-eye"></i> Visualisation</h3>
+                        <p class="text-gray-700">🎯 Visualisez vos objectifs et imaginez-vous en train de les accomplir. Cela vous motive à agir et à avancer vers vos rêves.</p>
+                    </div>
+
+                    <!-- Exercice -->
+                    <div class="bg-gray-100 p-4 rounded shadow">
+                        <h3 class="text-lg font-semibold mb-2"><i class="fas fa-dumbbell"></i> Exercice</h3>
+                        <p class="text-gray-700">💪 Faites un peu d'exercice pour dynamiser votre corps, augmenter votre énergie et améliorer votre concentration.</p>
+                    </div>
+
+                    <!-- Lecture -->
+                    <div class="bg-gray-100 p-4 rounded shadow">
+                        <h3 class="text-lg font-semibold mb-2"><i class="fas fa-book"></i> Lecture</h3>
+                        <p class="text-gray-700">📖 Prenez le temps de lire quelques pages d'un livre inspirant pour développer vos connaissances et enrichir votre esprit.</p>
+                    </div>
+
+                    <!-- Écriture -->
+                    <div class="bg-gray-100 p-4 rounded shadow">
+                        <h3 class="text-lg font-semibold mb-2"><i class="fas fa-pencil-alt"></i> Écriture</h3>
+                        <p class="text-gray-700">✍️ Notez vos pensées, vos idées ou vos objectifs dans un journal pour clarifier votre vision et suivre vos progrès.</p>
+                    </div>
+                </div>
+
+<div class="bg-green-600 h-5 rounded shadow mt-4 flex items-center justify-center text-white" style="width: 100%;">
+  <!-- Progression -->
+</div>
+
+
+            </div>
+
+            <!-- Macronutriments and Dépense Section -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+
+                <!-- Dépense Journalière Énergétique Box -->
+                <div class="bg-white p-4 rounded shadow">
+                    <h2 class="text-lg font-bold"><i class="fas fa-burn"></i> Calculer la Dépense Journalière Énergétique</h2>
+                    <form class="mt-4">
+                        <div class="mb-4">
+                            <label class="block text-sm font-bold mb-2">Poids (kg):</label>
+                            <input type="number" class="w-full px-3 py-2 border rounded shadow-sm focus:outline-none" placeholder="Entrez votre poids">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-sm font-bold mb-2">Taille (cm):</label>
+                            <input type="number" class="w-full px-3 py-2 border rounded shadow-sm focus:outline-none" placeholder="Entrez votre taille">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-sm font-bold mb-2">Âge:</label>
+                            <input type="number" class="w-full px-3 py-2 border rounded shadow-sm focus:outline-none" placeholder="Entrez votre âge">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-sm font-bold mb-2">Niveau d'Activité Physique:</label>
+                            <select class="w-full px-3 py-2 border rounded shadow-sm focus:outline-none">
+                                <option value="1.2">Sédentaire (1.2)</option>
+                                <option value="1.375">Légèrement actif (1.375)</option>
+                                <option value="1.55">Modérément actif (1.55)</option>
+                                <option value="1.725">Très actif (1.725)</option>
+                                <option value="1.9">Extrêmement actif (1.9)</option>
+                            </select>
+                        </div>
+                        <button class="bg-blue-500 text-white px-4 py-2 rounded mt-2" type="submit">Calculer</button>
+                    </form>
+                    <p class="mt-4 text-gray-700">Votre dépense énergétique quotidienne estimée est : <strong class="animate-pulse">2500 kcal</strong>.</p>
+                </div>
+
+                <!-- Macronutriments Box -->
+                <div class="bg-white p-4 rounded shadow">
+                    <h2 class="text-lg font-bold"><i class="fas fa-apple-alt animate-bounce"></i> Macronutriments</h2>
+                    <form class="mt-4">
+                        <div class="mb-4">
+                            <label class="block text-sm font-bold mb-2">Calories Totales:</label>
+                            <input type="number" class="w-full px-3 py-2 border rounded shadow-sm focus:outline-none" placeholder="Entrez vos calories journalières">
+                        </div>
+                        <button class="bg-blue-500 text-white px-4 py-2 rounded mt-2" type="submit">Calculer Macronutriments</button>
+                    </form>
+                    <div class="mt-4">
+                        <p class="text-gray-700"><strong>Protéines:</strong> 150g (30%)</p>
+                        <p class="text-gray-700"><strong>Glucides:</strong> 250g (50%)</p>
+                        <p class="text-gray-700"><strong>Lipides:</strong> 60g (20%)</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Finances > Revenus et Dépenses > Budget et Épargne-->
+            <div class="bg-white p-6 mb-8 rounded shadow">
+                <h2 class="text-xl font-bold mb-2">
+                    <i class="fas fa-dollar-sign animate-bounce mr-2"></i> Activité Financière
+                </h2>
+
+                <!-- Grille des activités financières -->
+                <div class="grid grid-cols-2 gap-4">
+                    <!-- Revenus Box -->
+                    <div class="bg-green-100 p-4 rounded shadow">
+                        <h3 class="text-lg font-bold">
+                            <i class="fas fa-wallet mr-2"></i> Revenus
+                        </h3>
+                        <p class="mt-2"><strong>3000 €</strong></p>
+                    </div>
+
+                    <!-- Dépenses Box -->
+                    <div class="bg-red-100 p-4 rounded shadow">
+                        <h3 class="text-lg font-bold">
+                            <i class="fas fa-money-bill-wave mr-2"></i> Dépenses
+                        </h3>
+                        <p class="mt-2"><strong>2000 €</strong></p>
+                    </div>
+
+                    <!-- Total Box -->
+                    <div class="col-span-2 bg-blue-100 p-4 rounded shadow text-center mb-2 mt-2">
+                        <p class="mt-2 font-bold animate-bounce">
+                            <i class="fas fa-equals mr-2"></i> 1000 €
+                        </p>
+                    </div>
+
+                    <!-- Épargne Box -->
+                    <div class="bg-yellow-100 p-4 rounded shadow">
+                        <h3 class="text-lg font-bold">
+                            <i class="fas fa-piggy-bank mr-2"></i> Épargne
+                        </h3>
+                        <p class="mt-2"><strong>500 €</strong></p>
+                    </div>
+
+                    <!-- Investissements Box -->
+                    <div class="bg-purple-100 p-4 rounded shadow">
+                        <h3 class="text-lg font-bold">
+                            <i class="fas fa-chart-line mr-2"></i> Investir
+                        </h3>
+                        <p class="mt-2"><strong>800 €</strong></p>
+                    </div>
+
+                    <!-- Impôts Box -->
+                    <div class="bg-orange-100 p-4 rounded shadow">
+                        <h3 class="text-lg font-bold">
+                            <i class="fas fa-file-invoice-dollar mr-2"></i> Impôts
+                        </h3>
+                        <p class="mt-2"><strong>300 €</strong></p>
+                    </div>
+
+                    <!-- Dettes Box -->
+                    <div class="bg-gray-100 p-4 rounded shadow">
+                        <h3 class="text-lg font-bold">
+                            <i class="fas fa-credit-card mr-2"></i> Dettes
+                        </h3>
+                        <p class="mt-2"><strong>400 €</strong></p>
+                    </div>
+
+                    <!-- Divers Box -->
+                    <div class="bg-pink-100 p-4 rounded shadow">
+                        <h3 class="text-lg font-bold">
+                            <i class="fas fa-coins mr-2"></i> Divers
+                        </h3>
+                        <p class="mt-2"><strong>200 €</strong></p>
+                    </div>
+                </div>
+
+                <form class="mt-8 p-4 border border-gray-300 rounded-md shadow-sm">
+                    <p class="text-lg font-semibold mb-2">Catégorie socioprofessionnelle :</p>
+                    <div class="flex flex-wrap gap-4">
+                        <label class="flex items-center"><input type="radio" name="csp" value="Agriculteurs" class="mr-2">Agriculteurs</label>
+                        <label class="flex items-center"><input type="radio" name="csp" value="Artisans" class="mr-2">Artisans</label>
+                        <label class="flex items-center"><input type="radio" name="csp" value="Cadres" class="mr-2">Cadres</label>
+                        <label class="flex items-center"><input type="radio" name="csp" value="Intermediaires" class="mr-2">Professions intermédiaires</label>
+                        <label class="flex items-center"><input type="radio" name="csp" value="Employes" class="mr-2">Employés</label>
+                        <label class="flex items-center"><input type="radio" name="csp" value="Ouvriers" class="mr-2">Ouvriers</label>
+                        <label class="flex items-center"><input type="radio" name="csp" value="Retraites" class="mr-2">Retraités</label>
+                        <label class="flex items-center"><input type="radio" name="csp" value="SansActivite" class="mr-2">Sans activité</label>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

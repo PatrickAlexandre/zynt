@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Examples with Tailwind</title>
+  <script defer src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-900">
+  <div class="container mx-auto p-8">
+    <h1 class="text-3xl font-bold mb-8 text-center">API Examples with Tailwind</h1>
+
+    <!-- API Web Workers -->
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold mb-4">API Web Workers</h2>
+      <p class="mb-4">This example demonstrates how to use Web Workers to perform background tasks without freezing the main UI.</p>
+      <button id="worker-btn" class="bg-blue-500 text-white px-4 py-2 rounded">Start Web Worker</button>
+      <p id="worker-result" class="mt-4"></p>
+      <script>
+        document.getElementById('worker-btn').addEventListener('click', () => {
+          if (window.Worker) {
+            const worker = new Worker(URL.createObjectURL(new Blob([`
+              onmessage = function() {
+                let count = 0;
+                for (let i = 0; i < 1e7; i++) {
+                  count++;
+                }
+                postMessage(count);
+              };
+            `], {type: 'text/javascript'})));
+
+            worker.postMessage('');
+            worker.onmessage = function(e) {
+              document.getElementById('worker-result').textContent = 'Web Worker result: ' + e.data;
+            };
+          } else {
+            alert('Web Workers not supported');
+          }
+        });
+      </script>
+    </section>
+
+    <!-- API WebRTC -->
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold mb-4">API WebRTC</h2>
+      <p class="mb-4">This example captures the user's video stream using WebRTC.</p>
+      <button id="start-video" class="bg-blue-500 text-white px-4 py-2 rounded">Start Video</button>
+      <video id="video" class="mt-4" autoplay></video>
+      <script>
+        document.getElementById('start-video').addEventListener('click', () => {
+          navigator.mediaDevices.getUserMedia({ video: true })
+            .then(stream => {
+              document.getElementById('video').srcObject = stream;
+            })
+            .catch(err => {
+              console.error("Error accessing video stream: ", err);
+            });
+        });
+      </script>
+    </section>
+
+    <!-- API Canvas -->
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold mb-4">API Canvas</h2>
+      <p class="mb-4">This example uses the Canvas API to draw a simple shape.</p>
+      <canvas id="canvas" class="border border-gray-400" width="400" height="200"></canvas>
+      <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        ctx.fillStyle = 'blue';
+        ctx.fillRect(50, 50, 150, 100);
+      </script>
+    </section>
+
+    <!-- API Web Storage -->
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold mb-4">API Web Storage</h2>
+      <p class="mb-4">This example saves and retrieves data from Local Storage.</p>
+      <input id="storage-input" class="border border-gray-300 px-4 py-2 rounded mb-4" placeholder="Enter something">
+      <button id="save-storage" class="bg-blue-500 text-white px-4 py-2 rounded">Save to Local Storage</button>
+      <button id="load-storage" class="bg-blue-500 text-white px-4 py-2 rounded ml-4">Load from Local Storage</button>
+      <p id="storage-result" class="mt-4"></p>
+      <script>
+        document.getElementById('save-storage').addEventListener('click', () => {
+          const inputValue = document.getElementById('storage-input').value;
+          localStorage.setItem('data', inputValue);
+        });
+        document.getElementById('load-storage').addEventListener('click', () => {
+          const storedData = localStorage.getItem('data');
+          document.getElementById('storage-result').textContent = 'Stored data: ' + storedData;
+        });
+      </script>
+    </section>
+
+    <!-- API Geolocation -->
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold mb-4">API Geolocation</h2>
+      <p class="mb-4">This example retrieves the user's current location.</p>
+      <button id="get-location" class="bg-blue-500 text-white px-4 py-2 rounded">Get Location</button>
+      <p id="location-result" class="mt-4"></p>
+      <script>
+        document.getElementById('get-location').addEventListener('click', () => {
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(position => {
+              document.getElementById('location-result').textContent =
+                'Latitude: ' + position.coords.latitude + ', Longitude: ' + position.coords.longitude;
+            });
+          } else {
+            alert('Geolocation is not supported by this browser.');
+          }
+        });
+      </script>
+    </section>
+
+    <!-- API Fullscreen -->
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold mb-4">API Fullscreen</h2>
+      <p class="mb-4">This example demonstrates the Fullscreen API.</p>
+      <div id="fullscreen-div" class="w-64 h-64 bg-gray-300 flex items-center justify-center">
+        <p>Click the button to go fullscreen!</p>
+      </div>
+      <button id="go-fullscreen" class="bg-blue-500 text-white px-4 py-2 rounded mt-4">Go Fullscreen</button>
+      <script>
+        document.getElementById('go-fullscreen').addEventListener('click', () => {
+          const elem = document.getElementById('fullscreen-div');
+          if (elem.requestFullscreen) {
+            elem.requestFullscreen();
+          }
+        });
+      </script>
+    </section>
+
+    <!-- API Notifications -->
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold mb-4">API Notifications</h2>
+      <p class="mb-4">This example requests permission to send notifications.</p>
+      <button id="notify-btn" class="bg-blue-500 text-white px-4 py-2 rounded">Send Notification</button>
+      <script>
+        document.getElementById('notify-btn').addEventListener('click', () => {
+          if (Notification.permission === 'granted') {
+            new Notification('Hello! This is a notification.');
+          } else if (Notification.permission !== 'denied') {
+            Notification.requestPermission().then(permission => {
+              if (permission === 'granted') {
+                new Notification('Hello! This is a notification.');
+              }
+            });
+          }
+        });
+      </script>
+    </section>
+    
+    <!-- Additional API Examples can be added here following a similar structure -->
+
+  </div>
+</body>
+</html>

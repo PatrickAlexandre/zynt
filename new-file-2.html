@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tableau de Bord - Gestion de Vie Personnel</title>
+  <!-- 🌐 Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- 🎨 Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="font-roboto bg-gray-100 text-gray-900">
+
+  <!-- 🚀 SECTION 1 : Tableau de Bord -->
+  <div class="min-h-screen p-6 flex flex-col items-center bg-white">
+    <div class="bg-white shadow-lg rounded-lg w-full max-w-md p-6">
+      
+      <!-- 🏷️ En-tête (Titre et déconnexion) -->
+      <div class="flex justify-between items-center mb-6">
+        <h1 class="text-2xl font-semibold text-gray-800">Mon Tableau de Bord</h1>
+        <button class="bg-red-500 hover:bg-red-400 text-white px-4 py-2 rounded-full">Déconnexion</button>
+      </div>
+
+      <!-- 📊 Statistiques principales -->
+      <div class="grid grid-cols-1 gap-4">
+        <div class="bg-gray-50 p-4 rounded-lg shadow-sm text-center">
+          <p class="text-gray-600 text-sm">Vitesse Actuelle</p>
+          <h2 class="text-3xl font-semibold text-gray-800">120 km/h</h2>
+        </div>
+        <div class="bg-gray-50 p-4 rounded-lg shadow-sm text-center">
+          <p class="text-gray-600 text-sm">Niveau Carburant</p>
+          <h2 class="text-3xl font-semibold text-gray-800">65%</h2>
+        </div>
+        <div class="bg-gray-50 p-4 rounded-lg shadow-sm text-center">
+          <p class="text-gray-600 text-sm">Température Moteur</p>
+          <h2 class="text-3xl font-semibold text-gray-800">95°C</h2>
+        </div>
+        <div class="bg-gray-50 p-4 rounded-lg shadow-sm text-center">
+          <p class="text-gray-600 text-sm">Position GPS</p>
+          <h2 class="text-3xl font-semibold text-gray-800">48.8566° N, 2.3522° E</h2>
+        </div>
+      </div>
+
+      <!-- 📈 Barres de progression -->
+      <div class="mt-6">
+        <div class="mb-4">
+          <label for="fuel" class="block text-sm font-medium text-gray-600">Carburant</label>
+          <div class="w-full bg-gray-200 h-2 rounded-full">
+            <div class="bg-red-500 h-full rounded-full" style="width: 65%"></div>
+          </div>
+        </div>
+        <div>
+          <label for="engine" class="block text-sm font-medium text-gray-600">Température Moteur</label>
+          <div class="w-full bg-gray-200 h-2 rounded-full">
+            <div class="bg-blue-500 h-full rounded-full" style="width: 75%"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 🎛️ Boutons d'action -->
+      <div class="flex justify-between mt-6">
+        <button class="bg-blue-500 hover:bg-blue-400 text-white px-4 py-2 rounded-full w-full mr-2">Mode Éco</button>
+        <button class="bg-green-500 hover:bg-green-400 text-white px-4 py-2 rounded-full w-full ml-2">Navigation</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🧑‍💼 SECTION 2 : Profil utilisateur -->
+  <div class="flex justify-center mt-6">
+    <div class="bg-white p-6 rounded-lg shadow-lg flex items-center space-x-4 max-w-md w-full">
+      <img class="w-16 h-16 rounded-full" src="https://opgg-static.akamaized.net/meta/images/lol/latest/champion/Draven.png" alt="Profil">
+      <div>
+        <h1 class="text-xl font-semibold">Patrick Alexandre</h1>
+        <p class="text-gray-500 text-sm">INTJ | EUW</p>
+        <p class="text-blue-500 text-sm">Rang Ladder 6</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🤖 SECTION 3 : Automatisations et Scripts -->
+  <main class="bg-gray-100 p-6 mt-6">
+    <h2 class="text-2xl font-bold text-center mb-6">Automatisations</h2>
+    <div class="grid gap-4 max-w-md mx-auto">
+      <div class="bg-white p-4 rounded-lg shadow-lg text-center">
+        <h3 class="text-lg font-semibold mb-2">Gestion du Temps</h3>
+        <button class="w-full bg-green-500 text-white py-2 rounded-full hover:bg-green-600">En savoir plus</button>
+      </div>
+      <div class="bg-white p-4 rounded-lg shadow-lg text-center">
+        <h3 class="text-lg font-semibold mb-2">Suivi des Performances</h3>
+        <button class="w-full bg-yellow-500 text-white py-2 rounded-full hover:bg-yellow-600">En savoir plus</button>
+      </div>
+      <div class="bg-white p-4 rounded-lg shadow-lg text-center">
+        <h3 class="text-lg font-semibold mb-2">Apprentissage Continu</h3>
+        <button class="w-full bg-red-500 text-white py-2 rounded-full hover:bg-red-600">En savoir plus</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- 🏆 SECTION 4 : Classement des Joueurs -->
+  <section class="bg-white p-6 mt-6 rounded-lg shadow-lg max-w-md mx-auto">
+    <h3 class="text-xl font-bold text-center mb-4">Classement des Joueurs</h3>
+    <table class="min-w-full bg-white rounded-lg shadow overflow-hidden text-center">
+      <thead class="bg-gray-800 text-white">
+        <tr>
+          <th class="py-2">Rang</th>
+          <th class="py-2">Joueur</th>
+          <th class="py-2">Points</th>
+          <th class="py-2">Équipe</th>
+        </tr>
+      </thead>
+      <tbody class="text-gray-700">
+        <tr class="border-b">
+          <td class="py-2">1</td>
+          <td class="py-2">Lionel Messi</td>
+          <td class="py-2">98</td>
+          <td class="py-2">PSG</td>
+        </tr>
+        <tr class="bg-gray-50 border-b">
+          <td class="py-2">2</td>
+          <td class="py-2">Cristiano Ronaldo</td>
+          <td class="py-2">95</td>
+          <td class="py-2">Al Nassr</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+</body>
+
+</html>

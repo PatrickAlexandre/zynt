@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tableau de bord</title>
+  
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <style>
+    /* CSS Variables */
+    :root {
+      --primary-color: #007bff;
+      --secondary-color: #6c757d;
+      --font-color: #333;
+      --bg-color: #f8f9fa;
+      --font-size-base: 16px;
+      --border-radius: 8px;
+      --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      --transition: 0.3s ease;
+    }
+
+    /* Global Styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--font-color);
+      font-size: var(--font-size-base);
+      margin: 0;
+      padding: 0;
+    }
+
+    nav {
+      background-color: var(--primary-color);
+      padding: 1rem;
+      color: #fff;
+    }
+
+    nav h1 {
+      margin: 0;
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+    }
+
+    section {
+      padding: 2rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+    }
+
+    /* Cards */
+    .card {
+      background-color: #fff;
+      padding: 1.5rem;
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+      transition: var(--transition);
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    /* Grids using CSS Grid */
+    .grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    /* Responsive Typography */
+    h2, h3 {
+      font-size: clamp(1.5rem, 2vw, 2rem);
+    }
+
+    /* Form Styles */
+    input, select, button {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: var(--border-radius);
+    }
+
+    button {
+      background-color: var(--primary-color);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    button:hover {
+      background-color: darken(var(--primary-color), 10%);
+    }
+
+    /* Utility: Center elements */
+    .center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="container center">
+      <h1><i class="fas fa-home"></i> UX de Bord Connecté</h1>
+    </div>
+  </nav>
+
+  <!-- Section: Finances personnelles -->
+  <section>
+    <h2><i class="fas fa-dollar-sign"></i> Finance & Économie</h2>
+    
+    <div class="grid grid-2">
+      <!-- Suivi des Dépenses -->
+      <div class="card">
+        <h3>Suivi des Dépenses</h3>
+        <p>Cette semaine : <strong>350€</strong></p>
+        <p>Budget : <strong>2000€</strong></p>
+      </div>
+
+      <!-- Feuille de Calculs -->
+      <div class="card">
+        <h3>Feuille de Calculs</h3>
+        <iframe class="w-full" style="border: 0; height: 200px;" src="https://docs.google.com/spreadsheets/d/1qvuZP0dtyuugj_6b5K4iJTEB-4RRmB2YO_mE97vXshk/preview"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Productivité -->
+  <section>
+    <h2><i class="fas fa-clock"></i> Gestion du temps & Productivité</h2>
+
+    <div class="grid grid-3">
+      <!-- Développement personnel -->
+      <div class="card">
+        <h3>Développement personnel</h3>
+        <ul>
+          <li>Suivi des tâches</li>
+          <li>Compléter les tâches prioritaires</li>
+        </ul>
+      </div>
+
+      <!-- Suivi de la Productivité -->
+      <div class="card">
+        <h3>Suivi de la Productivité</h3>
+        <p>Projets en cours : 3</p>
+        <p>Objectifs : 2 à court terme, 5 à long terme</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Santé & Bien-être -->
+  <section>
+    <h2><i class="fas fa-heartbeat"></i> Santé & Bien-être</h2>
+
+    <div class="grid grid-3">
+      <!-- Calculateur de Poids Idéal -->
+      <div class="card">
+        <h3>Calculateur de Poids Idéal</h3>
+        <form id="weight-form">
+          <input type="number" id="poids" placeholder="Poids (kg)" />
+          <input type="number" id="taille" placeholder="Taille (cm)" />
+          <input type="number" id="age" placeholder="Âge" />
+          <select id="sexe">
+            <option value="homme">Homme</option>
+            <option value="femme">Femme</option>
+          </select>
+          <button type="button" onclick="calculer()">Calculer</button>
+        </form>
+        <div id="PoidsIdeal"></div>
+      </div>
+
+      <!-- Suivi des Calories -->
+      <div class="card">
+        <h3>Suivi des Calories</h3>
+        <p>Calories restantes : <strong id="caloriesRestantes">1200</strong></p>
+        <p>Calories consommées : <strong id="caloriesConsommees">800</strong> / 2000 kcal</p>
+        <progress id="caloriesProgress" value="800" max="2000"></progress>
+      </div>
+
+      <!-- Suivi du Sommeil -->
+      <div class="card">
+        <h3>Suivi du Sommeil</h3>
+        <p>Heures de sommeil : <strong>7h</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Calculateur de Poids Idéal
+    function calculer() {
+      const poids = +document.getElementById('poids').value;
+      const taille = +document.getElementById('taille').value;
+      const age = +document.getElementById('age').value;
+      const sexe = document.getElementById('sexe').value;
+      const mb = (10 * poids) + (6.25 * taille) - (5 * age) + (sexe === 'homme' ? 5 : -161);
+      document.getElementById('PoidsIdeal').textContent = `MB: ${mb.toFixed(2)} kcal/j`;
+    }
+
+    // Suivi des Calories
+    const objectifCalories = 2000, caloriesConsommees = 800;
+    document.getElementById('caloriesRestantes').textContent = objectifCalories - caloriesConsommees;
+    document.getElementById('caloriesConsommees').textContent = caloriesConsommees;
+    document.getElementById('caloriesProgress').value = caloriesConsommees;
+  </script>
+
+</body>
+</html>

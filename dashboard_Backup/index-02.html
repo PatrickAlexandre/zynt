@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tableau de bord</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/quagga/0.12.1/quagga.min.js"></script>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+  <!-- Navbar -->
+  <nav class="bg-blue-600 p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-white text-lg font-bold">
+        <i class="fas fa-home"></i> UX de Bord Connecté
+      </h1>
+    </div>
+  </nav>
+
+  <!-- Section: Finances personnelles -->
+  <section class="p-6">
+    <h2 class="text-xl font-bold mb-4">
+      <i class="fas fa-dollar-sign text-green-600"></i> Finance & Économie
+    </h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <!-- Suivi des Dépenses -->
+      <div class="bg-white shadow p-4 rounded-lg">
+        <h3 class="text-gray-800 font-semibold">Suivi des Dépenses</h3>
+        <p class="text-gray-700">Cette semaine : <span class="font-semibold">350€</span></p>
+        <p class="text-gray-700">Budget : <span class="font-semibold">2000€</span></p>
+      </div>
+
+      <!-- Calculs Budget par Catégorie Socioprofessionelle -->
+      <div class="bg-white shadow p-4 rounded-lg">
+        <h3 class="text-gray-800 font-semibold"> Part des Dépenses / catégorie Socioprofessionelle</h3>
+
+      </div>
+
+      <!-- Chart -->
+      <div class="bg-white shadow p-4 rounded-lg">
+        <h3 class="text-gray-800 font-semibold"> Chart</h3>
+
+      </div>
+
+      <!-- Investir et Épargner -->
+      <div class="bg-white shadow p-4 rounded-lg">
+        <h3 class="text-gray-800 font-semibold"> Investir et Épargner (Cheat Codes)</h3>
+
+      </div>
+
+      <!-- Feuille de Calculs -->
+      <div class="bg-white shadow p-4 rounded-lg">
+        <h3 class="text-gray-800 font-semibold">Feuille de Calculs</h3>
+        <iframe class="w-full h-48 rounded-md" src="https://docs.google.com/spreadsheets/d/1qvuZP0dtyuugj_6b5K4iJTEB-4RRmB2YO_mE97vXshk/preview" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Productivité -->
+  <section class="p-6">
+    <h2 class="text-xl font-bold mb-4">
+      <i class="fas fa-clock text-blue-600 animate-pulse"></i> Gestion du temps & Productivité
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+
+      <!-- Développement personnel -->
+      <div class="bg-white shadow p-4 rounded-lg">
+        <h1>Le livre des Décisions (Carroussel Boostrap)</h1>
+        <hr>
+
+      </div>
+      
+      <!-- Idées d'Optimisation de la Productivité -->
+      <div class="bg-white shadow p-4 rounded-lg">
+        <h3 class="font-semibold">Automatiser</h3>
+        <ol class="list-decimal list-inside space-y-1">
+          <li>Prioriser les tâches (Méthode Eisenhower)</li>
+          <li>Adopter une mentalité Kaizen (amélioration continue)</li>
+          <li>Régularité du sommeil et pauses régulières</li>
+          <li>Bloquer du temps pour soi (Time Blocking)</li>
+          <li>Utiliser la méthode Pomodoro</li>
+          <li>Décomposer les tâches complexes</li>
+          <li>Utiliser des outils de gestion de projet</li>
+          <li>Suivre la méthode des "3 tâches clés"</li>
+          <li>Limiter les distractions numériques</li>
+          <li>Planifier la journée la veille</li>
+          <li>Faire des revues hebdomadaires</li>
+          <li>Appliquer la loi de Parkinson</li>
+          <li>Utiliser la technique du batching</li>
+          <li>Appliquer la règle des 2 minutes (Méthode GTD)</li>
+          <li>Dire non plus souvent</li>
+          <li>Optimiser les routines matinales et du soir</li>
+        </ol>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Section: Santé & Bien-être -->
+  <section class="p-6">
+    <h2 class="text-xl font-bold mb-4">
+      <i class="fas fa-heartbeat text-red-600"></i> Santé & Bien-être
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+
+
+      <!-- API OpenFoodFacts -->
+      <div class="bg-white shadow p-4 rounded-lg">
+
+        <input type="text" id="barcode" placeholder="Entrez un code-barres" class="p-2 border border-gray-300 rounded-md w-full mb-4">
+        <button onclick="fetchNutriments(document.getElementById('barcode').value)" class="bg-blue-600 text-white py-2 px-4 rounded-md">Rechercher</button>
+        <div id="product-info" class="mt-4">
+            <img id="product-image" src="" alt="Image du produit" class="w-48 h-auto mx-auto mb-4" style="display:none;">
+            <div id="nutriments"></div>
+        </div>
+
+        <hr class="mt-4">
+        <a href="https://chatgpt.com/g/g-3VrgJ1GpH-sous-chef" target="_blank" class="mt-4 block bg-gray-800 text-white text-center py-3 rounded-md hover:bg-gray-900 transition duration-300">Accédez à Sous-Chef</a>
+
+      </div>
+      <script>
+          async function fetchNutriments(barcode) {
+              const response = await fetch(`https://world.openfoodfacts.net/api/v2/product/${barcode}?fields=nutriments,product_name,image_url`);
+              const data = await response.json();
+              const nutrimentsDiv = document.getElementById('nutriments');
+              const productImage = document.getElementById('product-image');
+
+              if (data.status === 1) {
+                  const product = data.product;
+                  const nutriments = product.nutriments;
+                  
+                  // Display product image if available
+                  if (product.image_url) {
+                      productImage.src = product.image_url;
+                      productImage.style.display = 'block';
+                  } else {
+                      productImage.style.display = 'none';
+                  }
+
+                  // Display macronutrients
+                  nutrimentsDiv.innerHTML = `
+                      <p><strong>Produit:</strong> ${product.product_name}</p>
+                      <p><strong>Carbohydrates:</strong> ${nutriments.carbohydrates || 'N/A'}g</p>
+                      <p><strong>Protéines:</strong> ${nutriments.proteins || 'N/A'}g</p>
+                      <p><strong>Graisses:</strong> ${nutriments.fat || 'N/A'}g</p>
+                  `;
+              } else {
+                  nutrimentsDiv.innerHTML = '<p>Produit non trouvé.</p>';
+                  productImage.style.display = 'none';
+              }
+          }
+      </script>
+
+
+      <div class="max-w-md w-full bg-white shadow-lg rounded-lg p-6">
+          <h1 class="text-2xl font-bold text-center mb-4">Suivi des calories</h1>
+
+          <div class="mt-4 bg-gray-200 rounded-full h-8 mb-4">
+              <div id="barreProgress" class="bg-green-500 h-8 rounded-full text-white text-center leading-8">Suivez votre objectif calorique</div>
+          </div>
+
+          <div class="mb-4">
+              <label for="age" class="block text-sm font-medium text-gray-700">Âge (en années) :</label>
+              <input type="number" id="age" placeholder="Entrez votre âge" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" oninput="validerChamps()">
+          </div>
+
+          <div class="mb-4">
+              <label for="poids" class="block text-sm font-medium text-gray-700">Poids (en kg) :</label>
+              <input type="number" id="poids" placeholder="Entrez votre poids en kg" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" oninput="validerChamps()">
+          </div>
+
+          <div class="mb-4">
+              <label for="taille" class="block text-sm font-medium text-gray-700">Taille (en cm) :</label>
+              <input type="number" id="taille" placeholder="Entrez votre taille en cm" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" oninput="validerChamps()">
+          </div>
+
+          <div class="mb-4">
+              <label for="sexe" class="block text-sm font-medium text-gray-700">Sexe :</label>
+              <select id="sexe" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" onchange="validerChamps()">
+                  <option value="male">Homme</option>
+                  <option value="female">Femme</option>
+              </select>
+          </div>
+
+          <div class="mb-4">
+              <label for="activite" class="block text-sm font-medium text-gray-700">Niveau d'activité physique :</label>
+              <select id="activite" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" onchange="validerChamps()">
+                  <option value="1.2">Sédentaire (peu ou pas d'exercice)</option>
+                  <option value="1.375">Légère activité (exercice léger 1-3 jours/semaine)</option>
+                  <option value="1.55">Activité modérée (exercice modéré 3-5 jours/semaine)</option>
+                  <option value="1.725">Activité intense (exercice intense 6-7 jours/semaine)</option>
+                  <option value="1.9">Activité très intense (travail physique ou entraînement intense)</option>
+              </select>
+          </div>
+
+          <div id="affichageCalories" class="hidden text-center text-gray-700 font-semibold mb-4"></div>
+
+          <div class="mb-4">
+              <label for="caloriesConsommees" class="block text-sm font-medium text-gray-700">Nombre de calories consommées :</label>
+              <input type="number" id="caloriesConsommees" placeholder="Entrez les calories consommées" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm">
+          </div>
+
+          <div class="flex justify-center">
+              <button id="ajouterCaloriesBtn" onclick="ajouterCalories()" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none disabled:bg-gray-300" disabled>Ajouter</button>
+          </div>
+
+          <script>
+              let depenseEnergTotale = 0;
+              let totalCaloriesAjoutees = 0;
+
+              function validerChamps() {
+                  const age = parseFloat(document.getElementById('age').value);
+                  const poids = parseFloat(document.getElementById('poids').value);
+                  const taille = parseFloat(document.getElementById('taille').value);
+                  const sexe = document.getElementById('sexe').value;
+                  const niveauActivite = document.getElementById('activite').value;
+
+                  if (!isNaN(age) && !isNaN(poids) && !isNaN(taille)) {
+                      calculerDepenseEnerg();
+                  }
+              }
+
+              function calculerDepenseEnerg() {
+                  const age = parseFloat(document.getElementById('age').value);
+                  const poids = parseFloat(document.getElementById('poids').value);
+                  const taille = parseFloat(document.getElementById('taille').value);
+                  const sexe = document.getElementById('sexe').value;
+                  const niveauActivite = parseFloat(document.getElementById('activite').value);
+
+                  let metabolismeBase;
+
+                  if (sexe === "male") {
+                      metabolismeBase = 88.362 + (13.397 * poids) + (4.799 * taille) - (5.677 * age);
+                  } else if (sexe === "female") {
+                      metabolismeBase = 447.593 + (9.247 * poids) + (3.098 * taille) - (4.330 * age);
+                  }
+
+                  depenseEnergTotale = metabolismeBase * niveauActivite;
+
+                  document.getElementById('affichageCalories').innerHTML = 
+                      `Votre métabolisme de base (BMR) est d'environ <strong>${Math.round(metabolismeBase)} calories</strong>.<br>
+                      Votre dépense énergétique journalière (TDEE) est d'environ <strong>${Math.round(depenseEnergTotale)} calories</strong>.`;
+
+                  document.getElementById('ajouterCaloriesBtn').disabled = false;
+
+                  totalCaloriesAjoutees = 0;
+                  mettreAJourBarreProgress();
+              }
+
+              function ajouterCalories() {
+                  const caloriesAjoutees = parseFloat(document.getElementById('caloriesConsommees').value);
+
+                  if (isNaN(caloriesAjoutees) || caloriesAjoutees <= 0) {
+                      alert("Veuillez entrer un nombre valide de calories.");
+                      return;
+                  }
+
+                  totalCaloriesAjoutees += caloriesAjoutees;
+                  mettreAJourBarreProgress();
+              }
+
+              function mettreAJourBarreProgress() {
+                  const caloriesRestantes = Math.max(depenseEnergTotale - totalCaloriesAjoutees, 0);
+
+                  // Calculer le pourcentage des calories restantes
+                  const pourcentage = (caloriesRestantes / depenseEnergTotale) * 100;
+
+                  const barreProgress = document.getElementById('barreProgress');
+                  barreProgress.style.width = pourcentage + '%';
+                  barreProgress.textContent = `${Math.round(caloriesRestantes)} / ${Math.round(depenseEnergTotale)} calories restantes`;
+              }
+          </script>
+      </div>
+
+
+
+
+
+      <!-- Suivi du Sommeil -->
+      <div class="bg-white shadow p-4 rounded-lg">
+        <h3 class="font-semibold">Suivi du Sommeil</h3>
+        <p class="text-gray-700">Heures de sommeil : <span class="font-semibold">7h</span></p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Section: Maison Connectée -->
+  <section class="p-6">
+    <h2 class="text-xl font-bold mb-4">
+      <i class="fas fa-lightbulb"></i> Maison Connectée
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <!-- Contrôle de l'éclairage -->
+      <div class="bg-white shadow p-4 rounded-lg">
+        <h3 class="font-semibold">Contrôle de l'éclairage</h3>
+        <input type="checkbox" checked class="toggle-checkbox">
+      </div>
+
+      <!-- Ajustement de la luminosité -->
+      <div class="bg-white shadow p-4 rounded-lg">
+        <h3 class="font-semibold">Ajustement de la Luminosité</h3>
+        <input type="range" class="w-full" min="0" max="100" value="75">
+      </div>
+
+        <!-- Choix des couleurs des lumières -->
+        <div class="bg-white shadow p-4 rounded-lg">
+            <h3 class="font-semibold">Couleurs des Lumières</h3>
+            <input type="color" id="lightColorPicker" value="" onchange="changeBackgroundColor(this.value)">
+        </div>
+        <script>
+        function changeBackgroundColor(color) {
+            document.body.style.backgroundColor = color;
+        }
+        </script>
+
+    </div>
+  </section>
+
+  <!-- Section: Influence Digitale -->
+  <section class="p-6">
+    <h2 class="text-xl font-bold mb-4">
+      <i class="fas fa-play text-blue-600"></i> Divertissement
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <!-- Lecteur Spotify -->
+      <div class="p-4 rounded-lg">
+        <h3 class="font-semibold">Spotify</h3>
+        <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DXcBWIGoYBM5M" width="100%" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+      </div>
+
+      <!-- Lecteur YouTube -->
+      <div class="p-4 rounded-lg">
+        <h3 class="font-semibold">YouTube</h3>
+        <iframe class="rounded" width="100%" height="380" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <!-- Réseaux Sociaux -->
+    <div class="mt-6 flex justify-center space-x-4">
+      <a href="https://www.facebook.com" target="_blank" class="text-blue-600 text-2xl">
+        <i class="fab fa-facebook"></i>
+      </a>
+      <a href="https://www.instagram.com" target="_blank" class="text-pink-600 text-2xl">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://www.twitter.com" target="_blank" class="text-blue-400 text-2xl">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="https://www.linkedin.com" target="_blank" class="text-blue-700 text-2xl">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </div>
+  </section>
+
+</body>
+</html>

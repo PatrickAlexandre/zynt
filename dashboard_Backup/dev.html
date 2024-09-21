@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productivité</title>
+    <!-- Font Awesome & Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <style>
+        :root {
+            --background-dark: #121212;
+            --text-light: #f5f5f5;
+            --primary-gradient: linear-gradient(145deg, #1e1e1e, #2c2c2c);
+            --success-gradient: linear-gradient(90deg, #28a745, #38ff85);
+            --info-gradient: linear-gradient(90deg, #17a2b8, #37f3ff);
+            --energy-gradient: linear-gradient(90deg, #ff8c00, #ffdf00);
+            --focus-gradient: linear-gradient(90deg, #0062ff, #00d8ff);
+            --box-shadow-light: rgba(255, 255, 255, 0.1);
+            --box-shadow-bright: rgba(0, 255, 255, 0.6);
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--background-dark);
+            color: var(--text-light);
+            padding-bottom: 70px;
+        }
+
+        header {
+            position: fixed; top: 20px; left: 20px;
+            background: var(--primary-gradient); color: white;
+            padding: 20px; border-radius: 30px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.8), 0px 0px 15px var(--box-shadow-bright);
+            z-index: 1000; width: 350px; text-align: center;
+            letter-spacing: 2px; text-transform: uppercase;
+        }
+
+        .progress {
+            height: 15px; background-color: #333;
+            border-radius: 10px; overflow: hidden;
+            margin-bottom: 15px; box-shadow: 0 0 10px var(--box-shadow-light);
+        }
+
+        .progress-bar {
+            height: 100%; transition: width 0.4s ease;
+        }
+
+        .bg-energy {
+            background: var(--energy-gradient);
+            box-shadow: 0 0 10px rgba(255, 223, 0, 0.8);
+        }
+
+        .bg-focus {
+            background: var(--focus-gradient);
+            box-shadow: 0 0 10px rgba(0, 216, 255, 0.8);
+        }
+
+        .container { margin-top: 100px; }
+
+        .card {
+            background-color: #1c1c1c; color: var(--text-light); border: none;
+        }
+
+        .card-header {
+            font-size: 24px; text-align: center; background: #333; border: none;
+        }
+
+        .badges {
+            text-align: center; margin-top: 10px;
+        }
+
+        .badge {
+            font-size: 12px; background-color: rgba(255, 255, 255, 0.1); color: white;
+            border-radius: 20px; padding: 5px 10px; margin-right: 5px;
+            letter-spacing: 1px; cursor: pointer;
+        }
+
+        .navbar { background-color: #333; color: white; }
+
+        .navbar a { color: white; }
+
+    </style>
+</head>
+
+<body>
+
+    <header class="hidden">
+        <!-- Information du personnage -->
+        <div class="character-info">
+            <h2>Personnage : John Doe</h2>
+            <p>Rôle : Développeur/Productivité</p>
+        </div>
+
+        <!-- Barres de progression -->
+        <div class="progress">
+            <div class="progress-bar bg-energy" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+            <span>Énergie 85%</span>
+        </div>
+        <div class="progress">
+            <div class="progress-bar bg-focus" role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+            <span>Focus 70%</span>
+        </div>
+    </header>
+
+    <main>
+        <section id="productivite" class="container">
+            <div id="productivite-card" class="card mb-4">
+                <div class="card-header bg-dark text-white">
+                    <h2 class="section-title">Productivité</h2>
+                    <div class="badges">
+                        <span class="badge" data-target="productivite-card">Pomodoro</span>
+                        <span class="badge" data-target="productivite-card">80/20</span>
+                        <span class="badge" data-target="productivite-card">Monotâche</span>
+                        <span class="badge" data-target="productivite-card">Planification</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p>Découvrez les meilleures techniques pour améliorer votre productivité et maximiser votre efficacité :</p>
+                    <ul>
+                        <li><strong>Getting Things Done (GTD) :</strong> Organisez vos tâches en actions concrètes et priorisez-les de manière stratégique.</li>
+                        <li><strong>Eat The Frog :</strong> Commencez par la tâche la plus difficile pour maximiser votre efficacité.</li>
+                    </ul>
+                    <div id="gtd">
+                        <h3>Getting Things Done</h3>
+                        <input type="text" id="taskInput" placeholder="Nouvelle tâche" class="form-control mb-2">
+                        <button class="btn btn-primary" onclick="addTask()">Ajouter la tâche</button>
+                        <ul id="taskList" class="mt-3"></ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="developpement" class="container">
+            <div id="developpement-card" class="card mb-4">
+                <div class="card-header bg-primary text-white">
+                    <h2 class="section-title">Développement personnel</h2>
+                    <div class="badges">
+                        <span class="badge" data-target="developpement-card">Motivation</span>
+                        <span class="badge" data-target="developpement-card">Croissance</span>
+                        <span class="badge" data-target="developpement-card">Épanouissement</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p>Investir dans votre développement personnel est essentiel pour atteindre votre plein potentiel.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="alimentation" class="container">
+            <div id="alimentation-card" class="card mb-4">
+                <div class="card-header bg-success text-white">
+                    <h2 class="section-title">Alimentation</h2>
+                    <div class="badges">
+                        <span class="badge" data-target="alimentation-card">Santé</span>
+                        <span class="badge" data-target="alimentation-card">Énergie</span>
+                        <span class="badge" data-target="alimentation-card">Équilibre</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p>Suivez une alimentation équilibrée pour maximiser votre énergie tout au long de la journée.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="temps" class="container">
+            <div id="temps-card" class="card mb-4">
+                <div class="card-header bg-info text-white">
+                    <h2 class="section-title">Temps</h2>
+                    <div class="badges">
+                        <span class="badge" data-target="temps-card">Organisation</span>
+                        <span class="badge" data-target="temps-card">Productivité</span>
+                        <span class="badge" data-target="temps-card">Planification</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p>Organisez votre temps de manière stratégique pour accomplir vos objectifs.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="budget" class="container">
+            <div id="budget-card" class="card mb-4">
+                <div class="card-header bg-warning text-white">
+                    <h2 class="section-title">Budget et Dépenses</h2>
+                    <div class="badges">
+                        <span class="badge" data-target="budget-card">Finance</span>
+                        <span class="badge" data-target="budget-card">Économie</span>
+                        <span class="badge" data-target="budget-card">Investissement</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p>Gérez efficacement votre budget pour maîtriser vos finances et maximiser vos investissements.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <nav class="navbar navbar-dark fixed-bottom">
+            <div class="container-fluid justify-content-center">
+                <a class="navbar-brand" href="#productivite"><i class="fas fa-tasks"></i> Productivité</a>
+                <a class="navbar-brand" href="#developpement"><i class="fas fa-lightbulb"></i> Développement</a>
+                <a class="navbar-brand" href="#alimentation"><i class="fas fa-apple-alt"></i> Alimentation</a>
+                <a class="navbar-brand" href="#temps"><i class="fas fa-clock"></i> Temps</a>
+                <a class="navbar-brand" href="#budget"><i class="fas fa-wallet"></i> Budget</a>
+            </div>
+        </nav>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

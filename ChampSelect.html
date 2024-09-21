@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copycat de Tableau de Bord Moderne</title>
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f7fc;
+        }
+
+        .sidebar {
+            height: 100vh;
+            background-color: #343a40;
+            color: white;
+            position: fixed;
+            width: 250px;
+            padding-top: 20px;
+        }
+
+        .sidebar a {
+            color: #d1d1d1;
+            display: block;
+            padding: 15px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .sidebar a:hover {
+            background-color: #495057;
+            color: white;
+        }
+
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+
+        .navbar {
+            background-color: #fff;
+            border-bottom: 1px solid #dee2e6;
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar .navbar-brand {
+            font-weight: bold;
+        }
+
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .stats-card {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .stats-card .card-body i {
+            font-size: 2rem;
+        }
+
+        .stats-card .card-body {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 992px) {
+            .sidebar {
+                width: 100px;
+            }
+            .sidebar a {
+                font-size: 14px;
+            }
+            .content {
+                margin-left: 100px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 0;
+                display: none;
+            }
+            .content {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <a href="#"><i class="fas fa-tachometer-alt"></i> Tableau de bord</a>
+        <a href="#"><i class="fas fa-users"></i> Utilisateurs</a>
+        <a href="#"><i class="fas fa-chart-line"></i> Statistiques</a>
+        <a href="#"><i class="fas fa-cogs"></i> Paramètres</a>
+        <a href="#"><i class="fas fa-sign-out-alt"></i> Déconnexion</a>
+    </div>
+
+    <!-- Content Area -->
+    <div class="content">
+        <!-- Top Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="#">LifeMaster X10</a>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-user-circle"></i> Profil</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Dashboard Content -->
+        <div class="container-fluid">
+
+            <!-- Favorite Cards -->
+            <div class="row bg-dark">
+                <!-- Carte Temps -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card stats-card" style="background-color: #87CEEB; color: white;"> <!-- Bleu clair -->
+                        <div class="card-body">
+                            <div>
+                                <h5>Temps</h5>
+                                <h3>1,245 heures restantes</h3>
+                                <p>Objectif de travail :</p>
+                                <div class="progress mb-3" style="height: 20px;">
+                                    <div class="progress-bar bg-info" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">Vie restante : 75%</div>
+                                </div>
+                                <p>Temps personnel :</p>
+                                <div class="progress" style="height: 20px;">
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: 82.5%;" aria-valuenow="82.5" aria-valuemin="0" aria-valuemax="100">Journée actuelle : 5/6</div>
+                                </div>
+                            </div>
+                            <i class="fas fa-clock"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carte Argent -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card stats-card" style="background-color: #28a745; color: white;"> <!-- Vert -->
+                        <div class="card-body">
+                            <div>
+                                <h5>Argent</h5>
+                                <h3>$34,700</h3>
+                                <p>Revenu moyen : $1,200/jour</p>
+                            </div>
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carte Santé -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card stats-card" style="background-color: #FF6F61; color: white;"> <!-- Rouge clair -->
+                        <div class="card-body">
+                            <div>
+                                <h5>Santé</h5>
+                                <h3>85%</h5>
+                                <p>Mentale :</p>
+                                <p>Physique :</p>
+                                <p>Nutrition et Hydratation :</p>
+                                <p>Niveau d'Activité Physique (NAP) : 1,9</p>
+                            </div>
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stat Cards -->
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card stats-card bg-primary text-white">
+                        <div class="card-body">
+                            <div>
+                                <h5>Utilisateurs actifs</h5>
+                                <h3>1,245</h3>
+                            </div>
+                            <i class="fas fa-users"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card stats-card bg-success text-white">
+                        <div class="card-body">
+                            <div>
+                                <h5>Revenus</h5>
+                                <h3>$34,700</h3>
+                            </div>
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card stats-card bg-warning text-white">
+                        <div class="card-body">
+                            <div>
+                                <h5>Nouveaux abonnés</h5>
+                                <h3>320</h3>
+                            </div>
+                            <i class="fas fa-user-plus"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card stats-card bg-danger text-white">
+                        <div class="card-body">
+                            <div>
+                                <h5>Problèmes signalés</h5>
+                                <h3>8</h3>
+                            </div>
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts Section -->
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Graphique des Utilisateurs</h5>
+                            <canvas id="userChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Graphique des Revenus</h5>
+                            <canvas id="revenueChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- My new Section -->
+            <hr class="mt-4">
+            Cette section vous permettra d'acquérir des compétences solides dans le <strong>conseil</strong> du <u>développement personnel, de la santé, des finances et de la gestion du temps</u>. Ces piliers sont essentiels pour améliorer la <strong>qualité de votre vie</strong>, garantir une stabilité financière, et vous épanouir tant sur le plan personnel que professionnel.
+            <div class="row bg-dark p-4 rounded shadow">
+
+                <div class="col-lg-3 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Temps</h5>
+                            <canvas id="revenueChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Argent</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Santé</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Getting Things Done (GTD)</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Étapes pour suivre la méthode GTD</h6>
+                            <ol>
+                                <li>Capturer : Collectez toutes les tâches et idées.</li>
+                                <li>Clarifier : Déterminez ce qui doit être fait pour chaque élément.</li>
+                                <li>Organiser : Classez les actions dans des listes appropriées.</li>
+                                <li>Réfléchir : Passez en revue vos listes régulièrement.</li>
+                                <li>Agir : Mettez en œuvre les actions immédiatement.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and Dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Chart Initialization -->
+    <script>
+        // Users Chart
+        var ctx1 = document.getElementById('userChart').getContext('2d');
+        var userChart = new Chart(ctx1, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                datasets: [{
+                    label: 'Utilisateurs actifs',
+                    data: [120, 150, 180, 220, 200, 250],
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true
+            }
+        });
+
+        // Revenue Chart
+        var ctx2 = document.getElementById('revenueChart').getContext('2d');
+        var depensesChart = new Chart(ctx2, {
+            type: 'bar',
+            data: {
+                labels: ['Alimentation', 'Logement', 'Transport', 'Santé', 'Loisirs', 'Éducation'],
+                datasets: [{
+                    label: 'Dépenses par COICOP (€)',
+                    data: [1200, 800, 600, 300, 400, 200],
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true
+            }
+        });
+    </script>
+
+</body>
+</html>

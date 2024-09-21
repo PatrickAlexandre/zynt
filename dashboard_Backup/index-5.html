@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8"> <!-- 🏆 Essentiel pour définir l'encodage des caractères et éviter les problèmes d'affichage -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 🏆 Indispensable pour assurer la réactivité sur mobile -->
+    <title>Productivité</title> <!-- 🥇 Important pour le SEO et le titre de l'onglet du navigateur -->
+
+    <!-- Font Awesome pour les icônes -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"> <!-- 🥈 Utilisé pour des icônes supplémentaires, améliore l'esthétique mais non critique -->
+
+    <!-- Bootstrap CSS pour la mise en page et les styles prédéfinis -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"> <!-- 🏆 Crucial pour la mise en page et la gestion des grilles et composants UI -->
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif; /* 🥉 Choix de police pour l'esthétique, non essentiel au fonctionnement */
+            background-color: #121212; /* 🥇 Couleur de fond sombre pour une ambiance moderne et immersive */
+            color: white; /* 🥇 Assure la lisibilité du texte sur fond sombre */
+        }
+
+        /* Style pour le header flottant inspiré de Riot Games */
+        header {
+            position: fixed; /* 🏆 Assure que le header reste visible au-dessus du reste du contenu pendant le défilement */
+            top: 20px;
+            left: 20px;
+            background: linear-gradient(145deg, #1e1e1e, #2c2c2c); /* 🥈 Effet esthétique moderne mais non essentiel */
+            color: white;
+            padding: 20px;
+            border-radius: 30px; /* 🥈 Donne une apparence arrondie moderne */
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.8), 0px 0px 15px rgba(0, 255, 255, 0.6); /* 🥈 Effet lumineux pour une touche moderne, non essentiel */
+            z-index: 1000; /* 🏆 S'assure que le header reste toujours au-dessus des autres éléments */
+            width: 350px;
+            font-family: 'Orbitron', sans-serif; /* 🥉 Choix de police pour un effet futuriste, améliore l'esthétique */
+            text-align: center;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        header h1 {
+            font-size: 24px; /* 🥈 Taille du titre, améliore la lisibilité mais non essentiel */
+            margin-bottom: 10px; /* 🥉 Ajoute de l'espace pour l'esthétique */
+        }
+
+        /* Styles des barres de progression */
+        .progress {
+            height: 15px; /* 🥇 Assure la taille des barres de progression */
+            background-color: #333; /* 🥈 Couleur de fond pour contraste avec la barre de progression */
+            border-radius: 10px; /* 🥉 Arrondit les coins pour une meilleure apparence */
+            overflow: hidden;
+            margin-bottom: 15px; /* 🥈 Ajoute un espace entre les barres */
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* 🥉 Effet lumineux, non critique */
+        }
+
+        .progress-bar {
+            height: 100%; /* 🥇 Remplit toute la hauteur de la barre, essentiel pour l'affichage de la progression */
+            transition: width 0.4s ease; /* 🥈 Ajoute une transition fluide lorsqu'une barre change de taille */
+        }
+
+        .progress-bar.bg-success {
+            background: linear-gradient(90deg, #28a745, #38ff85); /* 🥇 Indique visuellement la progression par la couleur */
+            box-shadow: 0 0 10px rgba(56, 255, 133, 0.8); /* 🥉 Effet lumineux, purement esthétique */
+        }
+
+        .progress-bar.bg-info {
+            background: linear-gradient(90deg, #17a2b8, #37f3ff); /* 🥇 Deuxième barre de progression avec une couleur différente */
+            box-shadow: 0 0 10px rgba(55, 243, 255, 0.8); /* 🥉 Effet esthétique non critique */
+        }
+
+        .container {
+            margin-top: 100px; /* 🥇 Crée un espace pour éviter que le header flottant chevauche les cartes */
+        }
+
+        /* Style des cartes */
+        .card {
+            background-color: #1c1c1c; /* 🥇 Fond sombre avec contraste, assure la lisibilité du contenu des cartes */
+            color: #f5f5f5; /* 🥇 Texte clair pour contraster avec le fond sombre, essentiel pour la lisibilité */
+            border: none; /* 🥈 Retire les bordures pour un effet plus moderne, non essentiel */
+        }
+
+        .card-header {
+            font-size: 24px; /* 🥈 Taille du texte pour les en-têtes des cartes, améliore la lisibilité */
+            text-align: center;
+            background: #333; /* 🥈 Fond légèrement plus clair pour les en-têtes des cartes, non essentiel */
+            border: none; /* 🥉 Retire la bordure, purement esthétique */
+        }
+
+        /* Style des badges */
+        .badges {
+            text-align: center; /* 🥇 Centre les badges, améliore la disposition visuelle */
+            margin-top: 10px; /* 🥈 Ajoute un espace pour une meilleure organisation des badges */
+        }
+        .badge {
+            font-size: 12px; /* 🥈 Taille des badges, assure la lisibilité */
+            background-color: rgba(255, 255, 255, 0.1); /* 🥉 Fond translucide pour une meilleure intégration visuelle */
+            color: white; /* 🥇 Couleur du texte, essentiel pour la lisibilité sur le fond sombre */
+            border-radius: 20px; /* 🥈 Arrondit les coins des badges pour une apparence moderne */
+            padding: 5px 10px; /* 🥇 Ajoute de l'espace intérieur pour rendre le texte plus lisible */
+            margin-right: 5px; /* 🥉 Espace entre les badges, purement esthétique */
+            letter-spacing: 1px; /* 🥈 Améliore l'espacement entre les lettres pour un meilleur rendu visuel */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header flottant -->
+    <header>
+        <h1>Titre central</h1> <!-- 🏆 Titre principal du header, essentiel pour l'identité visuelle de la page -->
+
+        <!-- Première barre de progression -->
+        <div class="progress">
+            <div class="progress-bar bg-success" role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div> <!-- 🏆 Affichage de la progression visuelle, crucial pour l'UX -->
+        </div>
+
+        <!-- Deuxième barre de progression -->
+        <div class="progress">
+            <div class="progress-bar bg-info" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div> <!-- 🏆 Affichage de la deuxième barre de progression, crucial pour l'UX -->
+        </div>
+    </header>
+
+    <!-- Conteneur pour la section Productivité -->
+    <div class="container">
+        <div class="card mb-4">
+            <div class="card-header bg-dark text-white">
+                <h2 class="section-title">Productivité</h2> <!-- 🏆 Titre de la carte, essentiel pour la hiérarchie de l'information -->
+                <div class="badges">
+                    <span class="badge">Pomodoro</span> <!-- 🥈 Badge d'information, améliore l'expérience mais non critique -->
+                    <span class="badge">80/20</span>
+                    <span class="badge">Monotâche</span>
+                    <span class="badge">Planification</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <p>Découvrez les meilleures techniques pour améliorer votre productivité et maximiser votre efficacité :</p> <!-- 🏆 Contenu explicatif, essentiel pour le message principal de la page -->
+                <ul>
+                    <li><strong>La méthode Pomodoro :</strong> Travaillez par blocs de 25 minutes suivis de pauses courtes.</li> <!-- 🏆 Détail des informations principales, essentiel pour le contenu informatif -->
+                    <li><strong>La technique 80/20 (Principe de Pareto) :</strong> Concentrez-vous sur les 20% des tâches qui apportent 80% des résultats.</li>
+                    <li><strong>Planification la veille :</strong> Préparez votre emploi du temps la veille pour bien démarrer votre journée.</li>
+                    <li><strong>Évitez le multitâche :</strong> Concentrez-vous sur une tâche à la fois pour une meilleure efficacité.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Conteneur pour Développement personnel -->
+    <div class="container">
+        <div class="card mb-4">
+            <div class="card-header bg-primary text-white">
+                <h2 class="section-title">Développement personnel</h2> <!-- 🏆 Titre principal pour la hiérarchie d'information -->
+                <div class="badges">
+                    <span class="badge">Motivation</span> <!-- 🥈 Badges informatifs pour améliorer l'UX -->
+                    <span class="badge">Croissance</span>
+                    <span class="badge">Épanouissement</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <p>Investir dans votre développement personnel est essentiel pour atteindre votre plein potentiel.</p> <!-- 🏆 Contenu essentiel pour le message clé de cette section -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Conteneur pour Alimentation -->
+    <div class="container">
+        <div class="card mb-4">
+            <div class="card-header bg-success text-white">
+                <h2 class="section-title">Alimentation</h2> <!-- 🏆 Titre essentiel pour la structure de l'information -->
+                <div class="badges">
+                    <span class="badge">Santé</span> <!-- 🥈 Améliore l'expérience utilisateur avec des informations synthétiques -->
+                    <span class="badge">Énergie</span>
+                    <span class="badge">Équilibre</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <p>Suivez une alimentation équilibrée pour maximiser votre énergie tout au long de la journée.</p> <!-- 🏆 Contenu clé de la section alimentation -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Conteneur pour Temps -->
+    <div class="container">
+        <div class="card mb-4">
+            <div class="card-header bg-info text-white">
+                <h2 class="section-title">Temps</h2> <!-- 🏆 Titre principal pour structurer la section sur le temps -->
+                <div class="badges">
+                    <span class="badge">Organisation</span> <!-- 🥈 Synthèse de l'information dans les badges pour l'UX -->
+                    <span class="badge">Productivité</span>
+                    <span class="badge">Planification</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <p>Organisez votre temps de manière stratégique pour accomplir vos objectifs.</p> <!-- 🏆 Contenu informatif essentiel pour cette section -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Conteneur pour Budget et Dépenses -->
+    <div class="container">
+        <div class="card mb-4">
+            <div class="card-header bg-warning text-white">
+                <h2 class="section-title">Budget et Dépenses</h2> <!-- 🏆 Titre principal de cette section pour la structure du contenu -->
+                <div class="badges">
+                    <span class="badge">Finance</span> <!-- 🥈 Informations résumées dans les badges, améliore l'expérience utilisateur -->
+                    <span class="badge">Économie</span>
+                    <span class="badge">Investissement</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <p>Gérez efficacement votre budget pour maîtriser vos finances et maximiser vos investissements.</p> <!-- 🏆 Contenu essentiel sur la gestion des finances, message principal de la section -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS pour les interactions et composants -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script> <!-- 🥇 Important pour le bon fonctionnement des composants interactifs -->
+</body>
+</html>

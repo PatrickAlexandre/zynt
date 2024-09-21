@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tableau de Bord - Gestion de Vie Personnel</title>
+  <!-- 🌐 Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- 🖋️ Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <!-- 🎨 Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+
+<body class="bg-[url('https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/XSHS00F6IFZ91650386025907.jpg')] bg-cover bg-fixed bg-center text-white font-playfair">
+
+
+    <!--📟 HUD (Head-Up Display)--><!-- Conteneur Principal -->
+    <div class="h-screen flex items-center justify-center">
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg max-w-5xl w-full">
+            <!-- Header -->
+            <div class="flex items-center justify-between">
+                <h1 class="text-3xl font-bold">Mon Tableau de Bord</h1>
+                <button class="bg-red-600 hover:bg-red-500 text-white font-semibold px-4 py-2 rounded">Déconnexion</button>
+            </div>
+
+            <!-- Statistiques Principales -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
+                <div class="bg-gray-700 p-4 rounded-lg">
+                    <p class="text-gray-400 text-sm">Vitesse Actuelle</p>
+                    <h2 class="text-2xl font-semibold">120 km/h</h2>
+                </div>
+                <div class="bg-gray-700 p-4 rounded-lg">
+                    <p class="text-gray-400 text-sm">Niveau Carburant</p>
+                    <h2 class="text-2xl font-semibold">65%</h2>
+                </div>
+                <div class="bg-gray-700 p-4 rounded-lg">
+                    <p class="text-gray-400 text-sm">Température Moteur</p>
+                    <h2 class="text-2xl font-semibold">95°C</h2>
+                </div>
+                <div class="bg-gray-700 p-4 rounded-lg">
+                    <p class="text-gray-400 text-sm">Position GPS</p>
+                    <h2 class="text-2xl font-semibold">48.8566° N, 2.3522° E</h2>
+                </div>
+                <div class="bg-gray-700 p-4 rounded-lg">
+                    <p class="text-gray-400 text-sm">Autonomie Restante</p>
+                    <h2 class="text-2xl font-semibold">300 km</h2>
+                </div>
+                <div class="bg-gray-700 p-4 rounded-lg">
+                    <p class="text-gray-400 text-sm">Consommation de Carburant</p>
+                    <h2 class="text-2xl font-semibold">8.5 L/100 km</h2>
+                </div>
+                <div class="bg-gray-700 p-4 rounded-lg">
+                    <p class="text-gray-400 text-sm">Pression des Pneus</p>
+                    <h2 class="text-2xl font-semibold">2.2 bar</h2>
+                </div>
+                <div class="bg-gray-700 p-4 rounded-lg">
+                    <p class="text-gray-400 text-sm">Distance Parcourue</p>
+                    <h2 class="text-2xl font-semibold">150 km</h2>
+                </div>
+            </div>
+
+            <!-- Barres de Progression -->
+            <div class="mt-8">
+                <div class="mb-4">
+                    <label for="fuel" class="block text-sm font-medium text-gray-400">Carburant</label>
+                    <div class="relative pt-1">
+                        <div class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-red-200">
+                            <div style="width: 65%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-red-500"></div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <label for="engine" class="block text-sm font-medium text-gray-400">Température Moteur</label>
+                    <div class="relative pt-1">
+                        <div class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-blue-200">
+                            <div style="width: 75%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-500"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Boutons Actions -->
+            <div class="flex justify-end mt-6 space-x-4">
+                <button class="bg-blue-600 hover:bg-blue-500 text-white font-semibold px-4 py-2 rounded">Mode Éco</button>
+                <button class="bg-green-600 hover:bg-green-500 text-white font-semibold px-4 py-2 rounded">Navigation</button>
+            </div>
+        </div>
+    </div>
+
+    <!--🎮 [HUD frame]
+    Ce cadre (HUD frame) est utilisé pour afficher des informations importantes concernant le personnage dans le jeu. 
+    Il permet au joueur de visualiser :
+    1️⃣ L'avatar du personnage : une image circulaire en haut du cadre.
+    2️⃣ Le nom du personnage : situé juste sous l'image pour l'identification rapide.
+    3️⃣ Les barres de vie ❤️ et de mana 🔵 : elles représentent les ressources vitales et magiques du personnage.
+    Ce type de frame est essentiel pour informer le joueur sur l'état actuel de son personnage en temps réel ⏳ et garantir une expérience de jeu fluide 🎮-->
+    <div class="bg-gradient-to-br from-gray-900 to-black text-yellow-300 border-4 border-gray-600 shadow-lg rounded-lg flex items-center p-2 lg:p-6 w-2/3">
+        <div class="relative">
+        <img class="rounded-full" src="https://opgg-static.akamaized.net/meta/images/lol/latest/champion/Draven.png?image=e_upscale,c_crop,h_103,w_103,x_9,y_9/q_auto:good,f_webp,w_100,h_100&v=1724034092925"
+            alt="Image de profil de Patrick Alexandre">
+        <span class="absolute bottom-0 right-0 bg-blue-500 text-white text-xs font-bold rounded-full px-2" aria-label="Classement 352">352</span>
+        </div>
+        <div class="ml-6">
+        <h1 class="text-white font-bold text-xl">Patrick Alexandre <span class="text-gray-400">INTJ</span></h1>
+        <div class="text-gray-400 text-sm mt-1 flex items-center">
+            <i class="fas fa-globe-europe mr-2"></i>
+            <span>EUW</span>
+            <span class="mx-2">|</span>
+            <span class="text-blue-400">Rang Ladder <span class="text-blue-500 font-bold">6</span> (0.0038% meilleurs joueurs)</span>
+        </div>
+        </div>
+    </div>
+
+
+
+    <hr>
+
+
+
+    <!--😎 Automatisations et Scripts Indispensables -->
+    <main class="container bg-gray-900 p-6">
+        <h1 class="text-3xl font-bold text-center text-white mb-6">Automatisations et Scripts Indispensables</h1>
+
+        <!-- Utilisation de flexbox pour les scripts sous forme de cartes -->
+        <div class="flex flex-wrap justify-center">
+
+            <!-- Automatisation 1 : Gestion du Temps -->
+            <article class="bg-white text-gray-800 p-6 rounded-lg shadow-lg m-3 flex-1 max-w-[300px] transform transition hover:scale-105 hover:shadow-xl">
+                <h2 class="text-2xl font-bold mb-4 text-center">Automatisation : Gestion du Temps</h2>
+                <p class="text-base text-center mb-4">Optimisez votre emploi du temps avec des outils d'automatisation pour bloquer du temps, définir des priorités et éliminer les distractions.</p>
+                <div class="text-center mb-4">
+                    <span class="block text-lg font-semibold">Maximisez votre productivité</span>
+                    <span class="block text-sm">À utiliser avec</span>
+                    <span class="block text-xl font-bold text-green-500">Trello, Google Calendar</span>
+                </div>
+                <button class="w-full bg-green-500 text-white py-2 rounded-md hover:bg-green-600">En savoir plus</button>
+            </article>
+
+            <!-- Automatisation 2 : Suivi des Performances -->
+            <article class="bg-white text-gray-800 p-6 rounded-lg shadow-lg m-3 flex-1 max-w-[300px] transform transition hover:scale-105 hover:shadow-xl">
+                <h2 class="text-2xl font-bold mb-4 text-center">Script : Suivi des Performances</h2>
+                <p class="text-base text-center mb-4">Mettez en place des scripts pour suivre vos performances en temps réel, analyser vos habitudes, et ajuster vos routines pour rester efficace.</p>
+                <div class="text-center mb-4">
+                    <span class="block text-lg font-semibold">Suivez vos progrès</span>
+                    <span class="block text-sm">Compatible avec</span>
+                    <span class="block text-xl font-bold text-yellow-500">Notion, Excel, Google Sheets</span>
+                </div>
+                <button class="w-full bg-yellow-500 text-white py-2 rounded-md hover:bg-yellow-600">En savoir plus</button>
+            </article>
+
+            <!-- Automatisation 3 : Apprentissage Continu -->
+            <article class="bg-white text-gray-800 p-6 rounded-lg shadow-lg m-3 flex-1 max-w-[300px] transform transition hover:scale-105 hover:shadow-xl">
+                <h2 class="text-2xl font-bold mb-4 text-center">Automatisation : Apprentissage Continu</h2>
+                <p class="text-base text-center mb-4">Créez des flux de travail automatisés pour la lecture quotidienne, la formation en ligne et la révision pour maintenir un apprentissage constant.</p>
+                <div class="text-center mb-4">
+                    <span class="block text-lg font-semibold">Élevez vos compétences</span>
+                    <span class="block text-sm">En utilisant</span>
+                    <span class="block text-xl font-bold text-red-500">RSS, Coursera, LinkedIn Learning</span>
+                </div>
+                <button class="w-full bg-red-500 text-white py-2 rounded-md hover:bg-red-600">En savoir plus</button>
+            </article>
+
+            <!-- Automatisation 4 : Gestion Financière -->
+            <article class="bg-white text-gray-800 p-6 rounded-lg shadow-lg m-3 flex-1 max-w-[300px] transform transition hover:scale-105 hover:shadow-xl">
+                <h2 class="text-2xl font-bold mb-4 text-center">Script : Gestion Financière</h2>
+                <p class="text-base text-center mb-4">Automatisez la gestion de vos finances, suivez vos revenus, dépenses et investissements, et optimisez votre planification budgétaire avec des scripts.</p>
+                <div class="text-center mb-4">
+                    <span class="block text-lg font-semibold">Maîtrisez vos finances</span>
+                    <span class="block text-sm">Automatisation avec</span>
+                    <span class="block text-xl font-bold text-purple-500">Mint, YNAB, Python</span>
+                </div>
+                <button class="w-full bg-purple-500 text-white py-2 rounded-md hover:bg-purple-600">En savoir plus</button>
+            </article>
+
+            <!-- Automatisation 5 : Bien-être Personnel -->
+            <article class="bg-white text-gray-800 p-6 rounded-lg shadow-lg m-3 flex-1 max-w-[300px] transform transition hover:scale-105 hover:shadow-xl">
+                <h2 class="text-2xl font-bold mb-4 text-center">Automatisation : Bien-être Personnel</h2>
+                <p class="text-base text-center mb-4">Suivez et améliorez votre santé physique et mentale avec des automatisations pour la méditation, le sport, et la gestion du stress.</p>
+                <div class="text-center mb-4">
+                    <span class="block text-lg font-semibold">Prenez soin de vous</span>
+                    <span class="block text-sm">Applications suggérées</span>
+                    <span class="block text-xl font-bold text-teal-500">Headspace, Fitbit, MyFitnessPal</span>
+                </div>
+                <button class="w-full bg-teal-500 text-white py-2 rounded-md hover:bg-teal-600">En savoir plus</button>
+            </article>
+
+        </div>
+        
+        <!-- Affichage de l'automatisation sélectionnée -->
+        <canvas class="border-white">
+            Votre sélection apparaîtra ici.
+        </canvas>
+
+    </main>
+
+
+
+    <hr>
+
+
+
+    <!-- 📈 [Grid] "Dashbord" -->
+    <header class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 p-6 bg-gray-900">
+
+        <!-- Dormir -->
+        <div class="bg-blue-100 p-4 lg:p-6 rounded-lg shadow hover:shadow-md transition-all duration-300 ease-in-out">
+            <h2 class="text-lg lg:text-xl font-semibold text-gray-700 flex items-center mb-2">
+            <i class="fas fa-bed mr-2 text-blue-500 animate-pulse" aria-hidden="true"></i> <span class="uppercase">Dormir</span>
+            </h2>
+            <p class="text-3xl lg:text-4xl font-bold text-gray-900">8h</p>
+            <p class="text-xs lg:text-sm text-gray-500 mt-1">Qualité de sommeil optimale</p>
+            <!--"Morning Miracle"
+            <p class="mt-4 font-semibold">Cycle circadien :</p>
+             
+            <button id="MorningMiracle" class="bg-blue-500 bg-opacity-50 hover:bg-blue-700 text-white font-bold py-2 px-4 mt-4 rounded focus:outline-none focus:ring-2 focus:ring-blue-300">
+                Ouvrir Morning Miracle dans un nouvel onglet
+            </button>
+            <ul class="list-disc list-inside text-gray-700">
+            <li><strong>Silence</strong> : Méditation, prière ou réflexion pour réduire le stress</li>
+            <li><strong>Exercice</strong> : Faire un peu de sport pour améliorer l'énergie et la concentration</li>
+            <li><strong>Lecture</strong> : Lire pour apprendre et stimuler la créativité</li>
+            <li><strong>Scribing (écriture)</strong> : Tenir un journal pour réfléchir et se développer personnellement</li>
+            </ul> -->
+        </div>
+        <!-- Manger -->
+        <div class="bg-red-100 p-4 lg:p-6 rounded-lg shadow hover:shadow-md transition-all duration-300 ease-in-out">
+            <h2 class="text-lg lg:text-xl font-semibold text-gray-700 flex items-center mb-2">
+            <i class="fas fa-fire mr-2 text-red-500 animate-pulse" aria-hidden="true"></i> <span class="uppercase">Manger</span>
+            </h2>
+            <p class="text-3xl lg:text-4xl font-bold text-gray-900">1 887 kcal</p>
+            <p class="text-xs lg:text-sm text-gray-500 mt-1">Consommation énergétique restante aujourd'hui</p>
+        </div>
+        <!-- Bouger -->
+        <div class="bg-green-100 p-4 lg:p-6 rounded-lg shadow hover:shadow-md transition-all duration-300 ease-in-out">
+            <h2 class="text-lg lg:text-xl font-semibold text-gray-700 flex items-center mb-2">
+            <i class="fas fa-running mr-2 text-green-500 animate-pulse" aria-hidden="true"></i> <span class="uppercase">Bouger</span>
+            </h2>
+            <p class="text-3xl lg:text-4xl font-bold text-gray-900">1.4</p>
+            <p class="text-xs lg:text-sm text-gray-500 mt-1">Niveau d'activité physique</p>
+        </div>
+
+    </header>
+
+
+
+    <hr>
+
+
+
+    <!-- 🦶 Footer -->
+    <footer class="w-full bg-gray-900 border-t border-gray-700">
+        <div class="container mx-auto px-4 py-2 flex justify-between items-center">
+        
+        <!-- Section Sorts -->
+        <div class="flex space-x-4">
+            <div class="p-2 bg-gray-800 border border-gray-700 rounded-md hover:bg-gray-700 cursor-pointer">
+            <span>CTA A</span>
+            </div>
+            <div class="p-2 bg-gray-800 border border-gray-700 rounded-md hover:bg-gray-700 cursor-pointer">
+            <span>CTA X</span>
+            </div>
+            <div class="p-2 bg-gray-800 border border-gray-700 rounded-md hover:bg-gray-700 cursor-pointer">
+            <span>CTA B</span>
+            </div>
+            <!-- Ajoute plus de sorts si nécessaire -->
+        </div>
+
+        <!-- Section Paramètres -->
+        <div class="p-2 bg-gray-800 border border-gray-700 rounded-md hover:bg-gray-700 cursor-pointer">
+            <span>Paramètres</span>
+        </div>
+
+        <!-- Section Inventaire -->
+        <div class="flex space-x-4">
+            <div class="p-2 bg-gray-800 border border-gray-700 rounded-md hover:bg-gray-700 cursor-pointer">
+            <span>Inventaire 1</span>
+            </div>
+            <!-- Ajoute plus d'éléments d'inventaire si nécessaire -->
+        </div>
+
+        </div>
+    </footer>
+
+
+    <!-- Hyperliens, Navigation
+    <nav aria-label="Menu de navigation">
+    <ul>
+        <li class="p-4 hover:bg-gray-700">
+        <button class="w-full text-left" aria-label="Accueil">
+            <i class="fas fa-home" aria-hidden="true"></i> <span class="ml-2">Accueil</span>
+        </button>
+        </li>
+        <li class="p-4 hover:bg-gray-700">
+        <button class="w-full text-left" aria-label="Tâches">
+            <i class="fas fa-tasks" aria-hidden="true"></i> <span class="ml-2">Tâches</span>
+        </button>
+        </li>
+        <li class="p-4 hover:bg-gray-700">
+        <button class="w-full text-left" aria-label="Objectifs">
+            <i class="fas fa-chart-line" aria-hidden="true"></i> <span class="ml-2">Objectifs</span>
+        </button>
+        </li>
+        <li class="p-4 hover:bg-gray-700">
+        <button class="w-full text-left" aria-label="Calendrier">
+            <i class="fas fa-calendar-alt" aria-hidden="true"></i> <span class="ml-2">Calendrier</span>
+        </button>
+        </li>
+        <li class="p-4 hover:bg-gray-700 mt-2">
+        <button class="w-full text-left" aria-label="Finances">
+            <i class="fas fa-euro-sign" aria-hidden="true"></i> <span class="ml-2">Finances</span>
+        </button>
+        </li>
+        <li class="p-4 hover:bg-gray-700">
+        <button class="w-full text-left" aria-label="Santé">
+            <i class="fas fa-heartbeat" aria-hidden="true"></i> <span class="ml-2">Santé</span>
+        </button>
+        </li>
+    </ul>
+    </nav>
+    <small>Un hyperlien ou lien hypertexte, est un élément de contenu d'un document électronique dont l'activation provoque l'affichage d'un autre document, ou d'une autre partie du même document</small>
+    -->
+
+
+    <hr>
+
+
+    <!--🏆 [Ranking Contacts]
+    = [Table] {ELO} "Ladder" / Contacts, Réseau -->
+      <table class="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
+        <thead class="bg-gray-800 text-white">
+          <tr>
+            <th class="py-3 px-6 text-left text-sm font-medium">Rang</th>
+            <th class="py-3 px-6 text-left text-sm font-medium">Nom du Joueur</th>
+            <th class="py-3 px-6 text-left text-sm font-medium">Points</th>
+            <th class="py-3 px-6 text-left text-sm font-medium">Équipe</th>
+          </tr>
+        </thead>
+        <tbody class="text-gray-700">
+          <tr class="border-b">
+            <td class="py-3 px-6">1</td>
+            <td class="py-3 px-6">Lionel Messi</td>
+            <td class="py-3 px-6">98</td>
+            <td class="py-3 px-6">PSG</td>
+          </tr>
+          <tr class="bg-gray-50 border-b">
+            <td class="py-3 px-6">2</td>
+            <td class="py-3 px-6">Cristiano Ronaldo</td>
+            <td class="py-3 px-6">95</td>
+            <td class="py-3 px-6">Al Nassr</td>
+          </tr>
+          <tr class="border-b">
+            <td class="py-3 px-6">3</td>
+            <td class="py-3 px-6">Kylian Mbappé</td>
+            <td class="py-3 px-6">94</td>
+            <td class="py-3 px-6">PSG</td>
+          </tr>
+          <tr class="bg-gray-50 border-b">
+            <td class="py-3 px-6">4</td>
+            <td class="py-3 px-6">Robert Lewandowski</td>
+            <td class="py-3 px-6">92</td>
+            <td class="py-3 px-6">Barcelona</td>
+          </tr>
+          <tr class="border-b">
+            <td class="py-3 px-6">5</td>
+            <td class="py-3 px-6">Kevin De Bruyne</td>
+            <td class="py-3 px-6">91</td>
+            <td class="py-3 px-6">Man City</td>
+          </tr>
+        </tbody>
+      </table>
+
+    <div class="w-1/4 bg-opacity-70 bg-gray-200 flex flex-wrap justify-center py-2 lg:py-4 space-x-2 lg:space-x-4">
+        <span class="bg-gray-200 text-gray-800 px-2 py-1 lg:px-4 lg:py-2 rounded-full text-xs lg:text-sm">Bronze</span>
+        <span class="bg-gray-200 text-gray-800 px-2 py-1 lg:px-4 lg:py-2 rounded-full text-xs lg:text-sm">Argent</span>
+        <span class="bg-gray-200 text-gray-800 px-2 py-1 lg:px-4 lg:py-2 rounded-full text-xs lg:text-sm">Or</span>
+        <span class="bg-gray-600 text-white px-2 py-1 lg:px-4 lg:py-2 rounded-full text-xs lg:text-sm">Platine</span>
+        <span class="bg-gray-200 text-gray-800 px-2 py-1 lg:px-4 lg:py-2 rounded-full text-xs lg:text-sm">Diamant</span>
+        <span class="bg-gray-200 text-gray-800 px-2 py-1 lg:px-4 lg:py-2 rounded-full text-xs lg:text-sm">Maître</span>
+        <span class="bg-gray-200 text-gray-800 px-2 py-1 lg:px-4 lg:py-2 rounded-full text-xs lg:text-sm">Challenger</span>
+    </div>
+
+    <!--📟 HUD (Head-Up Display)-->
+    <section class="hidden h-screen flex items-center justify-center">
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg max-w-4xl w-full">
+            <!-- Header -->
+            <div class="flex items-center justify-between">
+                <h1 class="text-3xl font-bold">Mon Tableau de Bord</h1>
+                <button class="bg-red-600 hover:bg-red-500 text-white font-semibold px-4 py-2 rounded">Déconnexion</button>
+            </div>
+
+            <!-- Statistiques Principales -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
+                <div class="bg-gray-700 p-4 rounded-lg">
+                    <p class="text-gray-400 text-sm">Vitesse Actuelle</p>
+                    <h2 class="text-2xl font-semibold">120 km/h</h2>
+                </div>
+                <div class="bg-gray-700 p-4 rounded-lg">
+                    <p class="text-gray-400 text-sm">Niveau Carburant</p>
+                    <h2 class="text-2xl font-semibold">65%</h2>
+                </div>
+                <div class="bg-gray-700 p-4 rounded-lg">
+                    <p class="text-gray-400 text-sm">Température Moteur</p>
+                    <h2 class="text-2xl font-semibold">95°C</h2>
+                </div>
+                <div class="bg-gray-700 p-4 rounded-lg">
+                    <p class="text-gray-400 text-sm">Position GPS</p>
+                    <h2 class="text-2xl font-semibold">48.8566° N, 2.3522° E</h2>
+                </div>
+            </div>
+
+            <!-- Barres de Progression -->
+            <div class="mt-8">
+                <div class="mb-4">
+                    <label for="fuel" class="block text-sm font-medium text-gray-400">Carburant</label>
+                    <div class="relative pt-1">
+                        <div class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-red-200">
+                            <div style="width: 65%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-red-500"></div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <label for="engine" class="block text-sm font-medium text-gray-400">Température Moteur</label>
+                    <div class="relative pt-1">
+                        <div class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-blue-200">
+                            <div style="width: 75%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-500"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Boutons Actions -->
+            <div class="flex justify-end mt-6 space-x-4">
+                <button class="bg-blue-600 hover:bg-blue-500 text-white font-semibold px-4 py-2 rounded">Mode Éco</button>
+                <button class="bg-green-600 hover:bg-green-500 text-white font-semibold px-4 py-2 rounded">Navigation</button>
+            </div>
+        </div>
+    </section>
+
+
+</body>
+
+</html>

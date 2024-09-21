@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tableau de Bord - Gestion de Vie Personnel</title>
+  <!-- 🌐 Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- 🖋️ Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- 🎨 Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body class="bg-gray-100 font-roboto">
+
+  <div class="flex h-screen">
+    <!-- 📊 Sidebar (caché sur mobile) -->
+    <aside class="hidden lg:block w-64 bg-gray-800 h-full text-white">
+      <div class="p-4">
+        <h2 class="text-2xl font-bold">Mon Tableau de Bord</h2>
+      </div>
+      <nav aria-label="Menu de navigation">
+        <ul>
+          <li class="p-4 hover:bg-gray-700">
+            <button class="w-full text-left" aria-label="Accueil">
+              <i class="fas fa-home" aria-hidden="true"></i> <span class="ml-2">Accueil</span>
+            </button>
+          </li>
+          <li class="p-4 hover:bg-gray-700">
+            <button class="w-full text-left" aria-label="Tâches">
+              <i class="fas fa-tasks" aria-hidden="true"></i> <span class="ml-2">Tâches</span>
+            </button>
+          </li>
+          <li class="p-4 hover:bg-gray-700">
+            <button class="w-full text-left" aria-label="Objectifs">
+              <i class="fas fa-chart-line" aria-hidden="true"></i> <span class="ml-2">Objectifs</span>
+            </button>
+          </li>
+          <li class="p-4 hover:bg-gray-700">
+            <button class="w-full text-left" aria-label="Calendrier">
+              <i class="fas fa-calendar-alt" aria-hidden="true"></i> <span class="ml-2">Calendrier</span>
+            </button>
+          </li>
+          <li class="p-4 hover:bg-gray-700 mt-2">
+            <button class="w-full text-left" aria-label="Finances">
+              <i class="fas fa-euro-sign" aria-hidden="true"></i> <span class="ml-2">Finances</span>
+            </button>
+          </li>
+          <li class="p-4 hover:bg-gray-700">
+            <button class="w-full text-left" aria-label="Santé">
+              <i class="fas fa-heartbeat" aria-hidden="true"></i> <span class="ml-2">Santé</span>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Bouton mobile pour afficher la sidebar -->
+    <div class="lg:hidden p-4 bg-gray-800 text-white">
+      <button id="sidebarToggle" class="text-2xl">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- 🏠 Main content -->
+    <main class="flex-1 p-6 relative">
+      <!-- Hero Section -->
+      <div class="absolute inset-x-0 top-0">
+        <!-- Rankings Bar -->
+        <div class="w-full bg-opacity-70 bg-gray-800 flex flex-wrap justify-center py-2 lg:py-4 space-x-2 lg:space-x-4">
+          <span class="bg-gray-200 text-gray-800 px-2 py-1 lg:px-4 lg:py-2 rounded-full text-xs lg:text-sm">S2024 S1 Master</span>
+          <span class="bg-gray-200 text-gray-800 px-2 py-1 lg:px-4 lg:py-2 rounded-full text-xs lg:text-sm">S2023 S2 Master</span>
+          <span class="bg-gray-200 text-gray-800 px-2 py-1 lg:px-4 lg:py-2 rounded-full text-xs lg:text-sm">S2023 S1 Master</span>
+          <span class="bg-gray-200 text-gray-800 px-2 py-1 lg:px-4 lg:py-2 rounded-full text-xs lg:text-sm">S2022 Master</span>
+        </div>
+      </div>
+
+      <!-- Profile Information -->
+      <div class="absolute inset-x-0 bottom-0 bg-opacity-70 bg-gray-800 flex items-center p-2 lg:p-6">
+        <div class="relative">
+            <img class="rounded-full" src="https://opgg-static.akamaized.net/meta/images/lol/latest/champion/Draven.png?image=e_upscale,c_crop,h_103,w_103,x_9,y_9/q_auto:good,f_webp,w_100,h_100&v=1724034092925"
+                alt="Image de profil de Patrick Alexandre">
+            <span class="absolute bottom-0 right-0 bg-blue-500 text-white text-xs font-bold rounded-full px-2">352</span>
+        </div>
+        <div class="ml-6">
+            <h1 class="text-white font-bold text-xl">Patrick Alexandre <span class="text-gray-400">INTJ</span></h1>
+            <div class="text-gray-400 text-sm mt-1 flex items-center">
+                <i class="fas fa-globe-europe mr-2"></i>
+                <span>EUW</span>
+                <span class="mx-2">|</span>
+                <span class="text-blue-400">Rang Ladder <span class="text-blue-500 font-bold">6</span> (0.0038% meilleurs joueurs)</span>
+            </div>
+        </div>
+      </div>
+
+      <h1 class="text-xl lg:text-3xl font-bold mb-4 mt-16">Tableau de Bord</h1>
+
+      <!-- 😴 Santé du personnage -->
+      <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 mt-4">
+        <div class="bg-blue-100 p-4 lg:p-6 rounded-lg shadow hover:shadow-md transition-all duration-300 ease-in-out">
+          <h2 class="text-lg lg:text-xl font-semibold text-gray-700 flex items-center mb-2">
+            <i class="fas fa-bed mr-2 text-blue-500 animate-pulse" aria-hidden="true"></i> <span class="uppercase">Dormir</span>
+          </h2>
+          <p class="text-3xl lg:text-4xl font-bold text-gray-900">8h</p>
+          <p class="text-xs lg:text-sm text-gray-500 mt-1">Qualité de sommeil optimale</p>
+  
+            <p class="mt-4 font-semibold">Cycle circadien :</p>
+            <p class="mt-4 font-semibold">Routine Morning Miracle :</p>
+            <ul class="list-disc list-inside text-gray-700">
+                <li><strong>Silence</strong> : Méditation, prière ou réflexion pour réduire le stress</li>
+                <li><strong>Affirmations</strong> : Répéter des affirmations positives pour renforcer la confiance</li>
+                <li><strong>Visualisation</strong> : Visualiser vos objectifs pour rester motivé</li>
+                <li><strong>Exercice</strong> : Faire un peu de sport pour améliorer l'énergie et la concentration</li>
+                <li><strong>Lecture</strong> : Lire pour apprendre et stimuler la créativité</li>
+                <li><strong>Scribing (écriture)</strong> : Tenir un journal pour réfléchir et se développer personnellement</li>
+            </ul>
+
+          <button id="MorningMiracle" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mt-2 rounded">
+            Ouvrir Morning Miracle
+          </button>
+
+        </div>
+        <div class="bg-red-100 p-4 lg:p-6 rounded-lg shadow hover:shadow-md transition-all duration-300 ease-in-out">
+          <h2 class="text-lg lg:text-xl font-semibold text-gray-700 flex items-center mb-2">
+            <i class="fas fa-fire mr-2 text-red-500 animate-pulse" aria-hidden="true"></i> <span class="uppercase">Manger</span>
+          </h2>
+          <p class="text-3xl lg:text-4xl font-bold text-gray-900">1 887 kcal</p>
+          <p class="text-xs lg:text-sm text-gray-500 mt-1">Consommation énergétique restante aujourd'hui</p>
+        </div>
+        <div class="bg-green-100 p-4 lg:p-6 rounded-lg shadow hover:shadow-md transition-all duration-300 ease-in-out">
+          <h2 class="text-lg lg:text-xl font-semibold text-gray-700 flex items-center mb-2">
+            <i class="fas fa-running mr-2 text-green-500 animate-pulse" aria-hidden="true"></i> <span class="uppercase">Bouger</span>
+          </h2>
+          <p class="text-3xl lg:text-4xl font-bold text-gray-900">1.4</p>
+          <p class="text-xs lg:text-sm text-gray-500 mt-1">Niveau d'activité physique</p>
+        </div>
+      </section>
+
+      <!-- Autres sections... -->
+
+    </main>
+  </div>
+
+  <script>
+    document.getElementById("sidebarToggle").addEventListener("click", function() {
+      const sidebar = document.querySelector("aside");
+      sidebar.classList.toggle("hidden");
+    });
+  </script>
+
+</body>
+
+</html>
